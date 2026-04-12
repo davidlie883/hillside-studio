@@ -1,97 +1,152 @@
 <template> <!-- Main wrapper for the whole page -->
-  <div class="min-h-screen bg-gray-50 text-gray-900">
-    <!-- Header -->
+<div class="min-h-screen bg-black text-white">    <!-- Header -->
      <!-- Flex is the one who arranges it to make it into a row -->
-    <header class="absolute left-0 top-0 z-30 flex w-full flex-col gap-4 px-5 py-5 md:flex-row md:items-center md:justify-between md:px-8 md:py-6">
-      <h1 class="text-xl font-bold text-white md:text-2xl">Hillside Studio</h1>
+<!-- Header -->
+<header class="px-6 pt-5">
+  <div class="mx-auto flex max-w-7xl items-center justify-between border-b border-white/10 pb-4">
+    <div class="flex items-center gap-10">
+      <h1 class="text-2xl font-semibold tracking-tight text-white md:text-3xl">
+        Hillside
+      </h1>
 
-      <nav class="flex gap-3">
-        <!-- rounded-full is the one who gives the circle -->
+      <nav class="hidden items-center md:flex">
+        <NuxtLink
+          to="/"
+          class="px-5 text-base font-medium text-white/70 transition hover:text-white"
+        >
+          Work
+        </NuxtLink>
+
         <NuxtLink
           to="/services"
-          class="inline-block rounded-full border border-white/40 px-4 py-2 text-sm text-white transition hover:bg-white hover:text-black"
+          class="px-5 text-base font-medium text-white/70 transition hover:text-white"
         >
-          Services
+          Approach
         </NuxtLink>
+
         <NuxtLink
-          to="/contact"
-          class="inline-block rounded-full bg-white px-4 py-2 text-sm text-black transition hover:opacity-90"
-        >
-          Contact
-        </NuxtLink>
+  to="/contact"
+  class="rounded-full border border-white/20 bg-white/10 px-5 py-3 text-sm font-medium text-white transition hover:bg-white/15"
+>
+  Let’s Work Together
+</NuxtLink>
       </nav>
-    </header>
+    </div>
 
-    <!-- Gives the background image -->
-    <main>
-      <section class="relative overflow-hidden min-h-screen">
-      
-        <div
-          class="absolute inset-0 bg-cover bg-center"
-          style="background-image: url('/house.png');"
-        ></div>
+    <NuxtLink
+      to="/contact"
+      class="rounded-full border border-white/20 bg-white px-5 py-3 text-sm font-medium text-black transition hover:bg-white/90"
+    >
+      Let’s Work Together
+    </NuxtLink>
+  </div>
+</header>
 
-        <!-- Adds a bit of color on the background -->
-        <div class="absolute inset-0 bg-black/35"></div>
+<!-- Hero -->
+<main class="bg-black">
+    <section class="mx-auto max-w-7xl px-6 pb-16 pt-10 md:px-6 md:pb-24 md:pt-14">
+    <div class="grid gap-12 lg:grid-cols-[1.05fr_1.25fr] lg:items-start">
+      <!-- Left side -->
+      <div class="pt-4">
+        <p
+          ref="tagRef"
+          class="mb-4 text-sm uppercase tracking-[0.2em] text-white/60"
+        >
+          Creative + Tech
+        </p>
 
-        <!-- Container holding all the text and button context -->
-        <div class="relative z-10 px-5 pt-32 pb-16 md:px-10 md:pt-40 md:pb-20 lg:px-16 lg:pt-44">
-          <div class="grid grid-cols-1 gap-10 md:grid-cols-2 md:items-center md:gap-12">
-            <div> <!-- container to hold specific thinfs -->
-              <p
-                ref="tagRef"
-                class="mb-3 text-xs uppercase tracking-[0.2em] text-white/80 md:mb-4 md:text-sm"
-              >
-                Simple mock website
-              </p>
+        <h2
+          ref="titleRef"
+          class="max-w-2xl text-5xl font-light leading-[0.95] tracking-tight text-white md:text-7xl"
+        >
+          Digital Agency
+        </h2>
 
-              <h2
-                ref="titleRef"
-                class="mb-5 max-w-2xl text-4xl font-bold leading-tight text-white sm:text-5xl md:mb-6 md:text-6xl"
-              >
-                We design clean websites for modern businesses
-              </h2>
+        <div class="mt-16 max-w-xl border-t border-white/30 pt-6">
+          <p
+            ref="textRef"
+            class="text-lg leading-relaxed text-white/75"
+          >
+            At Hillside, we’re a creative tech agency dedicated to helping businesses grow.
+            We design and develop engaging websites and digital products that elevate brands
+            and deliver real results.
+          </p>
+        </div>
 
-            <!-- Description paragraph-->
+        <div class="mt-8 flex flex-wrap gap-4">
+          <NuxtLink
+            ref="buttonRef"
+            to="/contact"
+            class="rounded-xl bg-white px-6 py-4 text-base font-medium text-black transition hover:opacity-90"
+          >
+            → Let’s Work Together
+          </NuxtLink>
 
-              <p
-                ref="textRef"
-                class="mb-7 max-w-xl text-base leading-relaxed text-white/85 md:mb-8 md:text-lg"
-              >
-                This is a sample homepage for a consulting-style business. It keeps the layout clean,
-                professional, and easy to understand.
-              </p>
+          <NuxtLink
+            to="/services"
+            class="rounded-xl bg-white/10 px-6 py-4 text-base font-medium text-white transition hover:bg-white/20"
+          >
+            → View Our Works
+          </NuxtLink>
+        </div>
+      </div>
 
-              <div class="flex flex-wrap gap-4">
-                <NuxtLink
-                  ref="buttonRef"
-                  to="/services"
-                  class="inline-block rounded-full bg-white px-5 py-3 text-sm text-black transition hover:scale-105 md:px-6 md:text-base"
-                >
-                  View Services
-                </NuxtLink>
-              </div>
-            </div>
+      <!-- Right side -->
+      <div
+        ref="cardRef"
+        class="grid gap-6 md:grid-cols-2 lg:pt-40"
+      >
+        <div class="rounded-[1.75rem] border border-white/25 bg-white/5 p-4">
+          <div
+            class="mb-5 h-56 rounded-2xl bg-cover bg-center"
+            style="background-image: url('/house.png');"
+          ></div>
 
-            <!-- Another layer -->
-            <div
-              ref="cardRef"
-              class="rounded-3xl border border-white/20 bg-white/10 p-6 shadow-xl backdrop-blur-md md:p-8"
-            >
-              <div class="mb-4 h-36 rounded-2xl bg-white/20 sm:h-40 md:h-48"></div>
-              <h3 class="mb-3 text-xl font-semibold text-white md:text-2xl">
-                Creative, simple, effective
-              </h3>
-              <p class="text-sm leading-relaxed text-white/80 md:text-base">
-                A mock landing page with smooth animation, clear spacing, and one strong call-to-action.
-              </p>
-            </div>
+          <h3 class="text-2xl font-medium leading-tight text-white">
+            Designing Web and System for Australian Business
+          </h3>
+
+          <p class="mt-4 text-sm leading-relaxed text-white/65">
+            Translating complex problems for establishing a digital presence across web
+            and enterprise business.
+          </p>
+
+          <div class="mt-10 border-t border-white/20 pt-5">
+            <NuxtLink to="/services" class="text-xl text-white transition hover:text-white/75">
+              → View Case Study
+            </NuxtLink>
           </div>
         </div>
-      </section>
+
+        <div class="rounded-[1.75rem] border border-white/25 bg-white/5 p-4">
+          <div
+            class="mb-5 h-56 rounded-2xl bg-cover bg-center"
+            style="background-image: url('/house.png');"
+          ></div>
+
+          <h3 class="text-2xl font-medium leading-tight text-white">
+            Designing Web and System for Australian Business
+          </h3>
+
+          <p class="mt-4 text-sm leading-relaxed text-white/65">
+            Translating complex problems for establishing a digital presence across web
+            and enterprise business.
+          </p>
+
+          <div class="mt-10 border-t border-white/20 pt-5">
+            <NuxtLink to="/services" class="text-xl text-white transition hover:text-white/75">
+              → View Case Study
+            </NuxtLink>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
 
       <!-- Rest of page -->
         <div class="px-5 py-12 md:px-10 md:py-20 lg:px-16 lg:py-24">
+
             <!-- Stats -->
             <!-- This makes it next to each other, grid -->
             <section class="mb-20 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -267,29 +322,25 @@ onMounted(() => {
   const tl = gsap.timeline() 
 
   tl.from(tagRef.value, {
-    y: 20,
+  y: 20,
+  opacity: 0,
+  duration: 0.6
+})
+  .from(titleRef.value, {
+    y: 40,
     opacity: 0,
-    duration: 0.6
-  })
-    .from(titleRef.value, {
-      y: 40,
-      opacity: 0,
-      duration: 0.8
-    }, '-=0.3')
-    .from(textRef.value, {
-      y: 30,
-      opacity: 0,
-      duration: 0.7
-    }, '-=0.4')
-    .from(buttonRef.value?.$el || buttonRef.value, {
-      y: 20,
-      opacity: 0,
-      duration: 0.6
-    }, '-=0.3')
-    .from(cardRef.value, {
-      x: 40,
-      opacity: 0,
-      duration: 0.9
-    }, '-=0.6')
+    duration: 0.8
+  }, '-=0.3')
+  .from(textRef.value, {
+    y: 30,
+    opacity: 0,
+    duration: 0.7
+  }, '-=0.4')
+  .from(cardRef.value, {
+    x: 40,
+    opacity: 0,
+    duration: 0.9
+  }, '-=0.6')
+
 })
 </script>
