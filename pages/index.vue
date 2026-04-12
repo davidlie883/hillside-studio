@@ -6,7 +6,7 @@
   <div class="mx-auto flex max-w-7xl items-center justify-between border-b border-white/10 pb-4">
     <div class="flex items-center gap-10">
       <h1 class="text-2xl font-semibold tracking-tight text-white md:text-3xl">
-        Hillside
+        Hillside Studios
       </h1>
 
       <nav class="hidden items-center md:flex">
@@ -91,6 +91,8 @@
         </div>
       </div>
 
+      
+
       <!-- Right side -->
       <div
         ref="cardRef"
@@ -143,9 +145,19 @@
     </div>
   </section>
 
+<div class="mt-10 flex justify-center">
+  <button
+    type="button"
+    @click="scrollToNext"
+    class="inline-flex items-center gap-3 text-sm uppercase tracking-[0.2em] text-white/55 transition hover:text-white"
+  >
+    <span>Scroll</span>
+    <span class="text-xl">↓</span>
+  </button>
+</div>
 
       <!-- Rest of page -->
-        <div class="px-5 py-12 md:px-10 md:py-20 lg:px-16 lg:py-24">
+        <div id="next-section" class="px-5 py-12 md:px-10 md:py-20 lg:px-16 lg:py-24">
 
             <!-- Stats -->
             <!-- This makes it next to each other, grid -->
@@ -317,6 +329,12 @@ const titleRef = ref(null)
 const textRef = ref(null)
 const buttonRef = ref(null)
 const cardRef = ref(null)
+const scrollToNext = () => {
+  const nextSection = document.getElementById('next-section')
+  if (nextSection) {
+    nextSection.scrollIntoView({ behavior: 'smooth' })
+  }
+}
 
 onMounted(() => {
   const tl = gsap.timeline() 
