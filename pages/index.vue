@@ -156,6 +156,77 @@
   </button>
 </div>
 
+<section class="mx-auto max-w-7xl px-6 py-20 md:py-28">
+  <div class="max-w-6xl">
+    <h2 class="text-4xl font-semibold leading-tight tracking-tight text-white md:text-6xl">
+      We’ve built digital experiences for established organisations, startups, and everything in between.
+      <span class="text-white/35">
+        The focus stays the same: systems that scale, solving communication problems that actually matter,
+        and keeping people first throughout the process.
+      </span>
+    </h2>
+  </div>
+
+  <div class="mt-20 grid gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
+    <div class="max-w-2xl">
+      <p class="text-xl leading-relaxed text-white/70">
+        We design digital experiences that work for the people using them and the teams maintaining them.
+        Start with what users actually need, map flows clearly, test early, and build interfaces that feel natural.
+      </p>
+
+      <p class="mt-8 text-xl leading-relaxed text-white/70">
+        Our work spans UX, interaction design, information architecture, and visual systems.
+        Good design should still hold up when things become more complex.
+      </p>
+
+      <NuxtLink
+        to="/services"
+        class="mt-10 inline-flex items-center gap-3 rounded-2xl bg-white px-6 py-4 text-base font-medium text-black transition hover:opacity-90"
+      >
+        <span class="text-xl">→</span>
+        <span>Our Methodology</span>
+      </NuxtLink>
+    </div>
+
+    <div class="rounded-[2rem] border border-white/10 bg-white/[0.03] p-6 md:p-8">
+      <div class="space-y-6">
+        <div class="border-b border-white/15 pb-4">
+          <div class="flex items-center justify-between">
+            <h3 class="text-xl font-semibold text-white">Workshop Strategy</h3>
+            <span class="text-white/60">+</span>
+          </div>
+        </div>
+
+        <div class="border-b border-white/15 pb-4">
+          <div class="flex items-center justify-between">
+            <h3 class="text-xl font-semibold text-white">User Experience</h3>
+            <span class="text-white/60">+</span>
+          </div>
+        </div>
+
+        <div class="border-b border-white/15 pb-4">
+          <div class="flex items-center justify-between">
+            <h3 class="text-xl font-semibold text-white">Design</h3>
+            <span class="text-white/60">×</span>
+          </div>
+
+          <p class="mt-4 max-w-md text-sm leading-relaxed text-white/60">
+            From rough concepts to polished UI, we create responsive interfaces, reusable components,
+            and visual systems that stay consistent across the entire website.
+          </p>
+        </div>
+
+        <div class="border-b border-white/15 pb-4">
+          <div class="flex items-center justify-between">
+            <h3 class="text-xl font-semibold text-white">Interaction</h3>
+            <span class="text-white/60">+</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
       <!-- Rest of page -->
         <div id="next-section" class="px-5 py-12 md:px-10 md:py-20 lg:px-16 lg:py-24">
 
