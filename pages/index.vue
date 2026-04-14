@@ -156,146 +156,101 @@
   </button>
 </div>
 
-<section class="mx-auto max-w-7xl px-6 py-20 md:py-28">
-  <div class="max-w-6xl">
-    <h2 class="text-4xl font-semibold leading-tight tracking-tight text-white md:text-6xl">
-      We’ve built digital experiences for established organisations, startups, and everything in between.
-      <span class="text-white/35">
-        The focus stays the same: systems that scale, solving communication problems that actually matter,
-        and keeping people first throughout the process.
-      </span>
-    </h2>
+<section class="relative">
+  <!-- ONE shared background image -->
+  <div class="sticky top-0 h-screen overflow-hidden">
+    <div
+      class="absolute inset-0 bg-cover bg-center"
+      style="background-image: url('/house.png');"
+    ></div>
+
+    <!-- base darkening -->
+    <div class="absolute inset-0 bg-black/25"></div>
   </div>
 
-  <div class="mt-20 grid gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
-    <div class="max-w-2xl">
-      <p class="text-xl leading-relaxed text-white/70">
-        We design digital experiences that work for the people using them and the teams maintaining them.
-        Start with what users actually need, map flows clearly, test early, and build interfaces that feel natural.
-      </p>
+  <!-- SECTION 1: immediately visible top half + text -->
+  <div class="relative z-10 min-h-screen">
+    <div class="mx-auto grid min-h-screen max-w-7xl items-center px-6 py-20 md:px-10 lg:grid-cols-2 lg:px-16">
+      <div></div>
 
-      <p class="mt-8 text-xl leading-relaxed text-white/70">
-        Our work spans UX, interaction design, information architecture, and visual systems.
-        Good design should still hold up when things become more complex.
-      </p>
+      <div class="max-w-xl">
+        <p class="mb-4 text-sm uppercase tracking-[0.2em] text-white/70">
+          Strategy + Design
+        </p>
 
-      <NuxtLink
-        to="/services"
-        class="mt-10 inline-flex items-center gap-3 rounded-2xl bg-white px-6 py-4 text-base font-medium text-black transition hover:opacity-90"
-      >
-        <span class="text-xl">→</span>
-        <span>Our Methodology</span>
-      </NuxtLink>
-    </div>
+        <h2 class="text-5xl font-semibold leading-[0.95] tracking-tight text-white md:text-7xl">
+          Building digital experiences that feel clear, modern, and easy to use.
+        </h2>
 
-    <div class="rounded-[2rem] border border-white/10 bg-white/[0.03] p-6 md:p-8">
-      <div class="space-y-6">
-        <div class="border-b border-white/15 pb-4">
-          <div class="flex items-center justify-between">
-            <h3 class="text-xl font-semibold text-white">Workshop Strategy</h3>
-            <span class="text-white/60">+</span>
-          </div>
-        </div>
-
-        <div class="border-b border-white/15 pb-4">
-          <div class="flex items-center justify-between">
-            <h3 class="text-xl font-semibold text-white">User Experience</h3>
-            <span class="text-white/60">+</span>
-          </div>
-        </div>
-
-        <div class="border-b border-white/15 pb-4">
-          <div class="flex items-center justify-between">
-            <h3 class="text-xl font-semibold text-white">Design</h3>
-            <span class="text-white/60">×</span>
-          </div>
-
-          <p class="mt-4 max-w-md text-sm leading-relaxed text-white/60">
-            From rough concepts to polished UI, we create responsive interfaces, reusable components,
-            and visual systems that stay consistent across the entire website.
-          </p>
-        </div>
-
-        <div class="border-b border-white/15 pb-4">
-          <div class="flex items-center justify-between">
-            <h3 class="text-xl font-semibold text-white">Interaction</h3>
-            <span class="text-white/60">+</span>
-          </div>
-        </div>
+        <p class="mt-8 text-lg leading-relaxed text-white/80 md:text-xl">
+          We’ve built digital experiences for established organisations, startups, and everything
+          in between. The focus stays the same: systems that scale, solving the communication
+          problems that actually matter, and keeping people first throughout the entire process.
+        </p>
       </div>
+    </div>
+  </div>
+
+  <!-- SECTION 2: same image continues, blur increases smoothly -->
+  <div id="next-section" class="relative z-10 min-h-screen overflow-hidden">
+    <!-- soft dark gradient -->
+    <div class="absolute inset-0 bg-gradient-to-b from-black/10 via-black/30 to-black/55"></div>
+
+    <!-- blur overlay -->
+    <div class="absolute inset-0 backdrop-blur-md"></div>
+
+    <!-- extra top fade so blur doesn't feel sudden -->
+    <div class="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-transparent to-black/10"></div>
+
+    <div class="relative mx-auto max-w-7xl px-6 pt-16 pb-20 md:px-10 md:pt-20 md:pb-24 lg:px-16 lg:pt-24 lg:pb-28">
+      <div class="mx-auto max-w-3xl text-center">
+        <p class="text-lg leading-relaxed text-white/85 md:text-2xl md:leading-relaxed">
+          We design digital experiences that work for the people using them and the teams
+          maintaining them. Start with what users actually need, map flows, test early, build
+          interfaces that don't need manuals.
+        </p>
+
+        <p class="mt-10 text-lg leading-relaxed text-white/85 md:mt-14 md:text-2xl md:leading-relaxed">
+          The work spans UX, interaction design, information architecture, and brand
+          evolution. Design for real conditions. Messy ones. If users get lost or the client can't
+          update content without breaking something, that's a problem. Good design holds up
+          when things get complicated.
+        </p>
+      </div>
+
+      <section class="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="rounded-2xl border border-white/10 bg-white/10 p-6 text-white backdrop-blur-sm">
+          <h3 class="text-3xl font-bold">50+</h3>
+          <p class="mt-2 text-white/75">Mock projects explored</p>
+        </div>
+
+        <div class="rounded-2xl border border-white/10 bg-white/10 p-6 text-white backdrop-blur-sm">
+          <h3 class="text-3xl font-bold">20+</h3>
+          <p class="mt-2 text-white/75">Landing page concepts</p>
+        </div>
+
+        <div class="rounded-2xl border border-white/10 bg-white/10 p-6 text-white backdrop-blur-sm">
+          <h3 class="text-3xl font-bold">100%</h3>
+          <p class="mt-2 text-white/75">Responsive-first layouts</p>
+        </div>
+
+        <div class="rounded-2xl border border-white/10 bg-white/10 p-6 text-white backdrop-blur-sm">
+          <h3 class="text-3xl font-bold">24/7</h3>
+          <p class="mt-2 text-white/75">Modern business presence</p>
+        </div>
+      </section>
     </div>
   </div>
 </section>
 
+
       <!-- Rest of page -->
         <div id="next-section" class="px-5 py-12 md:px-10 md:py-20 lg:px-16 lg:py-24">
 
-            <!-- Stats -->
-            <!-- This makes it next to each other, grid -->
-            <section class="mb-20 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              <div class="rounded-2xl bg-white p-6 text-black shadow-sm">
-                <h3 class="text-3xl font-bold text-black">50+</h3>
-                <p class="mt-2 text-gray-600">Mock projects explored</p>
-              </div>
-              <div class="rounded-2xl bg-white p-6 text-black shadow-sm">
-                <h3 class="text-3xl font-bold text-black">20+</h3>
-                <p class="mt-2 text-gray-600">Landing page concepts</p>
-              </div>
-              <div class="rounded-2xl bg-white p-6 text-black shadow-sm">
-                <h3 class="text-3xl font-bold text-black">100%</h3>
-                <p class="mt-2 text-gray-600">Responsive-first layouts</p>
-              </div>
-              <div class="rounded-2xl bg-white p-6 text-black shadow-sm">
-                <h3 class="text-3xl font-bold text-black">24/7</h3>
-                <p class="mt-2 text-gray-600">Modern business presence</p>
-              </div>
-            </section>
 
     <!-- Why Choose Us, and is a parent section and the grid-cols-2 allows it to be next to each other-->
     <section class="mb-20 grid gap-8 md:grid-cols-2 md:items-start">
 
-    <!-- Left side: content cards -->
-    <div class="grid gap-4 sm:grid-cols-2">
-        <div class="rounded-2xl bg-white p-6 shadow-sm">
-        <h3 class="mb-2 font-semibold">Clean layouts</h3>
-        <p class="text-sm text-gray-600">
-            Clear spacing and structure that make each section easy to scan.
-        </p>
-        </div>
-
-        <div class="rounded-2xl bg-white p-6 shadow-sm">
-        <h3 class="mb-2 font-semibold">Professional look</h3>
-        <p class="text-sm text-gray-600">
-            A polished visual style that helps build trust with visitors.
-        </p>
-        </div>
-
-        <div class="rounded-2xl bg-white p-6 shadow-sm">
-        <h3 class="mb-2 font-semibold">Responsive design</h3>
-        <p class="text-sm text-gray-600">
-            Pages that adapt neatly across desktop, tablet, and mobile.
-        </p>
-        </div>
-
-        <div class="rounded-2xl bg-white p-6 shadow-sm">
-        <h3 class="mb-2 font-semibold">Simple navigation</h3>
-        <p class="text-sm text-gray-600">
-            Straightforward page flow so users can find what they need fast.
-        </p>
-        </div>
-    </div>
-
-  <!-- Right side: title/content -->
-  <div>
-    <p class="mb-3 text-sm uppercase tracking-[0.2em] text-gray-500">Why choose us</p>
-    <h2 class="mb-5 text-3xl font-bold md:text-4xl">
-      A website should look good and feel easy to use
-    </h2>
-    <p class="max-w-xl text-gray-600">
-      We focus on simple structure, clean presentation, and layouts that help visitors
-      understand a business quickly.
-    </p>
-  </div>
 </section>
 
         <!-- Testimonials -->
