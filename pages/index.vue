@@ -28,7 +28,7 @@
   to="/contact"
   class="rounded-full border border-white/20 bg-white/10 px-5 py-3 text-sm font-medium text-white transition hover:bg-white/15"
 >
-  Let’s Work Together
+  Contact
 </NuxtLink>
       </nav>
     </div>
@@ -162,22 +162,22 @@
             <!-- Stats -->
             <!-- This makes it next to each other, grid -->
             <section class="mb-20 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            <div class="rounded-2xl bg-white p-6 shadow-sm">
-                <h3 class="text-3xl font-bold">50+</h3>
+              <div class="rounded-2xl bg-white p-6 text-black shadow-sm">
+                <h3 class="text-3xl font-bold text-black">50+</h3>
                 <p class="mt-2 text-gray-600">Mock projects explored</p>
-            </div>
-            <div class="rounded-2xl bg-white p-6 shadow-sm">
-                <h3 class="text-3xl font-bold">20+</h3>
+              </div>
+              <div class="rounded-2xl bg-white p-6 text-black shadow-sm">
+                <h3 class="text-3xl font-bold text-black">20+</h3>
                 <p class="mt-2 text-gray-600">Landing page concepts</p>
-            </div>
-            <div class="rounded-2xl bg-white p-6 shadow-sm">
-                <h3 class="text-3xl font-bold">100%</h3>
+              </div>
+              <div class="rounded-2xl bg-white p-6 text-black shadow-sm">
+                <h3 class="text-3xl font-bold text-black">100%</h3>
                 <p class="mt-2 text-gray-600">Responsive-first layouts</p>
-            </div>
-            <div class="rounded-2xl bg-white p-6 shadow-sm">
-                <h3 class="text-3xl font-bold">24/7</h3>
+              </div>
+              <div class="rounded-2xl bg-white p-6 text-black shadow-sm">
+                <h3 class="text-3xl font-bold text-black">24/7</h3>
                 <p class="mt-2 text-gray-600">Modern business presence</p>
-        </div>
+              </div>
             </section>
 
     <!-- Why Choose Us, and is a parent section and the grid-cols-2 allows it to be next to each other-->
