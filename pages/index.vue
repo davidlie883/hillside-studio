@@ -258,37 +258,105 @@
 </section>
 
         <!-- Testimonials -->
-        <section class="mb-20">
-          <p class="mb-3 text-sm uppercase tracking-[0.2em] text-gray-500">Testimonials</p>
-          <h2 class="mb-8 text-3xl font-bold md:text-4xl">What clients say</h2>
+        <section class="mb-24 overflow-hidden">
+  <div class="mb-8">
+    <p class="mb-3 text-sm uppercase tracking-[0.2em] text-gray-500">Testimonials</p>
+    <h2 class="text-3xl font-bold md:text-4xl">What clients say</h2>
+  </div>
 
-          <!-- This div allows it to be next to each other-->
-          <div class="grid gap-6 md:grid-cols-3">
-            <div class="rounded-2xl bg-white p-6 shadow-sm">
-              <p class="mb-4 text-gray-600">
-                “The layout felt clean and modern, and it presented our business much more clearly.”
-              </p>
-              <h3 class="font-semibold">Sarah Lim</h3>
-              <p class="text-sm text-gray-500">Small Business Owner</p>
-            </div>
+  <div class="relative">
+    <div class="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-black to-transparent"></div>
+    <div class="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-black to-transparent"></div>
 
-            <div class="rounded-2xl bg-white p-6 shadow-sm">
-              <p class="mb-4 text-gray-600">
-                “Simple, polished, and easy to navigate. It looked much more professional than before.”
-              </p>
-              <h3 class="font-semibold">Daniel Wong</h3>
-              <p class="text-sm text-gray-500">Startup Founder</p>
-            </div>
+    <div class="testimonial-track flex w-max gap-6">
+      <!-- set 1 -->
+      <article class="w-[340px] shrink-0 overflow-hidden rounded-[2rem] bg-[#111] text-white shadow-[0_10px_40px_rgba(0,0,0,0.35)]">
+        <div
+          class="h-56 bg-cover bg-center"
+          style="background-image: url('/house.png');"
+        ></div>
+        <div class="p-6">
+          <p class="mb-4 text-base leading-relaxed text-white/80">
+            “The layout felt clean and modern, and it presented our business much more clearly.”
+          </p>
+          <h3 class="font-semibold text-white">Sarah Lim</h3>
+          <p class="text-sm text-white/55">Small Business Owner</p>
+        </div>
+      </article>
 
-            <div class="rounded-2xl bg-white p-6 shadow-sm">
-              <p class="mb-4 text-gray-600">
-                “The structure was very easy to understand, and the design felt neat on every screen.”
-              </p>
-              <h3 class="font-semibold">Chloe Nguyen</h3>
-              <p class="text-sm text-gray-500">Marketing Coordinator</p>
-            </div>
-          </div>
-        </section>
+      <article class="w-[520px] shrink-0 overflow-hidden rounded-[2rem] bg-[#111] text-white shadow-[0_10px_40px_rgba(0,0,0,0.35)]">
+        <div
+          class="h-72 bg-cover bg-center"
+          style="background-image: url('/house.png');"
+        ></div>
+        <div class="p-6">
+          <p class="mb-4 text-xl leading-relaxed text-white/85">
+            “Simple, polished, and easy to navigate. It looked much more professional than before.”
+          </p>
+          <h3 class="font-semibold text-white">Daniel Wong</h3>
+          <p class="text-sm text-white/55">Startup Founder</p>
+        </div>
+      </article>
+
+      <article class="w-[340px] shrink-0 overflow-hidden rounded-[2rem] bg-[#111] text-white shadow-[0_10px_40px_rgba(0,0,0,0.35)]">
+        <div
+          class="h-56 bg-cover bg-center"
+          style="background-image: url('/house.png');"
+        ></div>
+        <div class="p-6">
+          <p class="mb-4 text-base leading-relaxed text-white/80">
+            “The structure was very easy to understand, and the design felt neat on every screen.”
+          </p>
+          <h3 class="font-semibold text-white">Chloe Nguyen</h3>
+          <p class="text-sm text-white/55">Marketing Coordinator</p>
+        </div>
+      </article>
+
+      <!-- set 2 -->
+      <article class="w-[340px] shrink-0 overflow-hidden rounded-[2rem] bg-[#111] text-white shadow-[0_10px_40px_rgba(0,0,0,0.35)]">
+        <div
+          class="h-56 bg-cover bg-center"
+          style="background-image: url('/house.png');"
+        ></div>
+        <div class="p-6">
+          <p class="mb-4 text-base leading-relaxed text-white/80">
+            “The layout felt clean and modern, and it presented our business much more clearly.”
+          </p>
+          <h3 class="font-semibold text-white">Sarah Lim</h3>
+          <p class="text-sm text-white/55">Small Business Owner</p>
+        </div>
+      </article>
+
+      <article class="w-[520px] shrink-0 overflow-hidden rounded-[2rem] bg-[#111] text-white shadow-[0_10px_40px_rgba(0,0,0,0.35)]">
+        <div
+          class="h-72 bg-cover bg-center"
+          style="background-image: url('/house.png');"
+        ></div>
+        <div class="p-6">
+          <p class="mb-4 text-xl leading-relaxed text-white/85">
+            “Simple, polished, and easy to navigate. It looked much more professional than before.”
+          </p>
+          <h3 class="font-semibold text-white">Daniel Wong</h3>
+          <p class="text-sm text-white/55">Startup Founder</p>
+        </div>
+      </article>
+
+      <article class="w-[340px] shrink-0 overflow-hidden rounded-[2rem] bg-[#111] text-white shadow-[0_10px_40px_rgba(0,0,0,0.35)]">
+        <div
+          class="h-56 bg-cover bg-center"
+          style="background-image: url('/house.png');"
+        ></div>
+        <div class="p-6">
+          <p class="mb-4 text-base leading-relaxed text-white/80">
+            “The structure was very easy to understand, and the design felt neat on every screen.”
+          </p>
+          <h3 class="font-semibold text-white">Chloe Nguyen</h3>
+          <p class="text-sm text-white/55">Marketing Coordinator</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
 
         <!-- FAQ -->
         <section class="mb-20">

@@ -18,3 +18,20 @@ html {
     transform: translateX(-50%);
   }
 }
+
+.testimonial-track {
+  animation: scroll-testimonials 28s linear infinite;
+}
+
+.testimonial-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-testimonials {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
