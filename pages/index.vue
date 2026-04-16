@@ -156,21 +156,19 @@
   </button>
 </div>
 
-<section class="relative">
+<section class="relative overflow-hidden">
   <!-- ONE shared background image -->
-  <div class="sticky top-0 h-screen overflow-hidden">
     <div
-      class="absolute inset-0 bg-cover bg-center"
-      style="background-image: url('/house.png');"
-    ></div>
+    class="absolute inset-0 bg-cover bg-center"
+    style="background-image: url('/house.png');"
+  ></div>
 
-    <!-- base darkening -->
-    <div class="absolute inset-0 bg-black/25"></div>
-  </div>
+  <div class="absolute inset-0 bg-black/25"></div>
 
   <!-- SECTION 1: immediately visible top half + text -->
-  <div class="relative z-10 min-h-screen">
-    <div class="mx-auto grid min-h-screen max-w-7xl items-center px-6 py-20 md:px-10 lg:grid-cols-2 lg:px-16">
+  <!-- SECTION 1 -->
+<div class="relative z-10">
+  <div class="mx-auto grid min-h-[75vh] max-w-7xl items-center px-6 pt-10 pb-8 md:px-10 md:pt-14 md:pb-10 lg:grid-cols-2 lg:px-16">
       <div></div>
 
       <div class="max-w-xl">
@@ -192,17 +190,18 @@
   </div>
 
   <!-- SECTION 2: same image continues, blur increases smoothly -->
-  <div id="next-section" class="relative z-10 min-h-screen overflow-hidden">
-    <!-- soft dark gradient -->
+    <div id="next-section" class="relative z-10 overflow-hidden">
+  
+  <!-- soft dark gradient -->
     <div class="absolute inset-0 bg-gradient-to-b from-black/10 via-black/30 to-black/55"></div>
 
     <!-- blur overlay -->
-    <div class="absolute inset-0 backdrop-blur-md"></div>
+    <div class="absolute inset-0 backdrop-blur-sm"></div>
 
     <!-- extra top fade so blur doesn't feel sudden -->
     <div class="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-transparent to-black/10"></div>
 
-    <div class="relative mx-auto max-w-7xl px-6 pt-16 pb-20 md:px-10 md:pt-20 md:pb-24 lg:px-16 lg:pt-24 lg:pb-28">
+    <div class="relative mx-auto max-w-7xl px-6 pt-14 pb-16 md:px-10 md:pt-16 md:pb-20 lg:px-16 lg:pt-20 lg:pb-24">
       <div class="mx-auto max-w-3xl text-center">
         <p class="text-lg leading-relaxed text-white/85 md:text-2xl md:leading-relaxed">
           We design digital experiences that work for the people using them and the teams
@@ -245,7 +244,7 @@
 
 
       <!-- Rest of page -->
-        <div id="next-section" class="px-5 py-12 md:px-10 md:py-20 lg:px-16 lg:py-24">
+        <div class="px-5 py-12 md:px-10 md:py-20 lg:px-16 lg:py-24">
 
 
     <!-- Why Choose Us, and is a parent section and the grid-cols-2 allows it to be next to each other-->

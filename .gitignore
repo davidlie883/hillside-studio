@@ -8,6 +8,15 @@ dist
 
 # Node dependencies
 node_modules
+node_modules_bad
+node_modules_broken
+node_modules_broken_final
+node_modules_bad_2
+node_modules_broken_3
+node_modules_broken_4
+.env
+node_modules_temp_fix
+
 
 # Logs
 logs
