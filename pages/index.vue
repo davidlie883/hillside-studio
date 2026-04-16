@@ -145,8 +145,7 @@
     </div>
   </section>
 
-<div class="mt-10 flex justify-center">
-  <button
+<div class="mt-14 mb-20 flex justify-center md:mt-16 md:mb-24">  <button
     type="button"
     @click="scrollToNext"
     class="inline-flex items-center gap-3 text-sm uppercase tracking-[0.2em] text-white/55 transition hover:text-white"
@@ -166,28 +165,31 @@
   <div class="absolute inset-0 bg-black/25"></div>
 
   <!-- SECTION 1: immediately visible top half + text -->
-  <!-- SECTION 1 -->
-<div class="relative z-10">
-  <div class="mx-auto grid min-h-[75vh] max-w-7xl items-center px-6 pt-10 pb-8 md:px-10 md:pt-14 md:pb-10 lg:grid-cols-2 lg:px-16">
-      <div></div>
+   <div class="relative z-10">
+  <div class="mx-auto grid min-h-[78vh] max-w-7xl items-center px-6 pt-10 md:px-10 md:pt-14 lg:grid-cols-2 lg:px-16">
+    <div></div>
 
-      <div class="max-w-xl">
-        <p class="mb-4 text-sm uppercase tracking-[0.2em] text-white/70">
-          Strategy + Design
-        </p>
+    <div class="max-w-xl">
+      <p class="mb-4 text-sm uppercase tracking-[0.2em] text-white/70">
+        Strategy + Design
+      </p>
 
-        <h2 class="text-5xl font-semibold leading-[0.95] tracking-tight text-white md:text-7xl">
-          Building digital experiences that feel clear, modern, and easy to use.
-        </h2>
+      <h2 class="text-5xl font-semibold leading-[0.95] tracking-tight text-white md:text-7xl">
+        Building digital experiences that feel clear, modern, and easy to use.
+      </h2>
 
-        <p class="mt-8 text-lg leading-relaxed text-white/80 md:text-xl">
-          We’ve built digital experiences for established organisations, startups, and everything
-          in between. The focus stays the same: systems that scale, solving the communication
-          problems that actually matter, and keeping people first throughout the entire process.
-        </p>
-      </div>
+      <p class="mt-8 text-lg leading-relaxed text-white/80 md:text-xl">
+        We’ve built digital experiences for established organisations, startups, and everything
+        in between. The focus stays the same: systems that scale, solving the communication
+        problems that actually matter, and keeping people first throughout the entire process.
+      </p>
     </div>
   </div>
+
+  <!-- extra image-only space before blur starts -->
+  <div class="h-32 md:h-48 lg:h-72"></div>
+</div>
+
 
   <!-- SECTION 2: same image continues, blur increases smoothly -->
     <div id="next-section" class="relative z-10 overflow-hidden">
@@ -196,26 +198,29 @@
     <div class="absolute inset-0 bg-gradient-to-b from-black/10 via-black/30 to-black/55"></div>
 
     <!-- blur overlay -->
-    <div class="absolute inset-0 backdrop-blur-sm"></div>
 
+    <div class="absolute inset-0 backdrop-blur-[2px]"></div>
     <!-- extra top fade so blur doesn't feel sudden -->
-    <div class="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-transparent to-black/10"></div>
+<div class="absolute inset-x-0 top-0 h-64 bg-gradient-to-b from-transparent via-black/5 to-black/10"></div>
 
-    <div class="relative mx-auto max-w-7xl px-6 pt-14 pb-16 md:px-10 md:pt-16 md:pb-20 lg:px-16 lg:pt-20 lg:pb-24">
-      <div class="mx-auto max-w-3xl text-center">
-        <p class="text-lg leading-relaxed text-white/85 md:text-2xl md:leading-relaxed">
-          We design digital experiences that work for the people using them and the teams
-          maintaining them. Start with what users actually need, map flows, test early, build
-          interfaces that don't need manuals.
-        </p>
+      <div class="relative mx-auto max-w-7xl px-6 pt-40 pb-16 md:px-10 md:pt-52 md:pb-20 lg:px-16 lg:pt-64 lg:pb-24">      
+        <div
+  ref="secondTextRef"
+  class="mx-auto max-w-3xl text-center opacity-0 translate-y-10"
+>
+  <p class="text-lg leading-relaxed text-white/85 md:text-2xl md:leading-relaxed">
+    We design digital experiences that work for the people using them and the teams
+    maintaining them. Start with what users actually need, map flows, test early, build
+    interfaces that don't need manuals.
+  </p>
 
-        <p class="mt-10 text-lg leading-relaxed text-white/85 md:mt-14 md:text-2xl md:leading-relaxed">
-          The work spans UX, interaction design, information architecture, and brand
-          evolution. Design for real conditions. Messy ones. If users get lost or the client can't
-          update content without breaking something, that's a problem. Good design holds up
-          when things get complicated.
-        </p>
-      </div>
+  <p class="mt-10 text-lg leading-relaxed text-white/85 md:mt-14 md:text-2xl md:leading-relaxed">
+    The work spans UX, interaction design, information architecture, and brand
+    evolution. Design for real conditions. Messy ones. If users get lost or the client can't
+    update content without breaking something, that's a problem. Good design holds up
+    when things get complicated.
+  </p>
+</div>
 
       <section class="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         <div class="rounded-2xl border border-white/10 bg-white/10 p-6 text-white backdrop-blur-sm">
@@ -381,12 +386,17 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger)
 
 const tagRef = ref(null)
 const titleRef = ref(null)
 const textRef = ref(null)
 const buttonRef = ref(null)
 const cardRef = ref(null)
+const secondTextRef = ref(null)
+
 const scrollToNext = () => {
   const nextSection = document.getElementById('next-section')
   if (nextSection) {
@@ -395,28 +405,41 @@ const scrollToNext = () => {
 }
 
 onMounted(() => {
-  const tl = gsap.timeline() 
+  const tl = gsap.timeline()
 
   tl.from(tagRef.value, {
-  y: 20,
-  opacity: 0,
-  duration: 0.6
-})
-  .from(titleRef.value, {
-    y: 40,
+    y: 20,
     opacity: 0,
-    duration: 0.8
-  }, '-=0.3')
-  .from(textRef.value, {
-    y: 30,
-    opacity: 0,
-    duration: 0.7
-  }, '-=0.4')
-  .from(cardRef.value, {
-    x: 40,
-    opacity: 0,
-    duration: 0.9
-  }, '-=0.6')
+    duration: 0.6
+  })
+    .from(titleRef.value, {
+      y: 40,
+      opacity: 0,
+      duration: 0.8
+    }, '-=0.3')
+    .from(textRef.value, {
+      y: 30,
+      opacity: 0,
+      duration: 0.7
+    }, '-=0.4')
+    .from(cardRef.value, {
+      x: 40,
+      opacity: 0,
+      duration: 0.9
+    }, '-=0.6')
 
+  if (secondTextRef.value) {
+    gsap.to(secondTextRef.value, {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: secondTextRef.value,
+        start: 'top 85%',
+        toggleActions: 'play none none reverse'
+      }
+    })
+  }
 })
 </script>
