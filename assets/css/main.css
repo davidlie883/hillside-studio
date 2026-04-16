@@ -1,3 +1,20 @@
 html {
   scroll-behavior: smooth;
 }
+
+.logo-marquee {
+  animation: scroll-logos 22s linear infinite;
+}
+
+.logo-marquee:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-logos {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}

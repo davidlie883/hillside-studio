@@ -342,6 +342,39 @@
         </section>
       </div>
     </main>
+
+    <section class="overflow-hidden border-t border-white/10 py-12">
+  <div class="mx-auto max-w-7xl px-6 md:px-10 lg:px-16">
+    <p class="mb-8 text-sm font-medium text-white/80">
+      Our Team’s Previous Experiences:
+    </p>
+
+    <div class="relative overflow-hidden">
+      <div class="pointer-events-none absolute inset-y-0 left-0 z-10 w-20 bg-gradient-to-r from-black to-transparent"></div>
+      <div class="pointer-events-none absolute inset-y-0 right-0 z-10 w-20 bg-gradient-to-l from-black to-transparent"></div>
+
+      <div class="logo-marquee flex w-max items-center gap-16">
+        <div class="flex items-center gap-16">
+          <img src="/luminous.png" alt="Luminous" class="h-16 w-auto object-contain opacity-90" />
+          <img src="/navanti.png" alt="Navanti" class="h-16 w-auto object-contain opacity-90" />
+          <img src="/no_moss.png" alt="No Moss" class="h-16 w-auto object-contain opacity-90" />
+          <img src="/ey.png" alt="EY" class="h-16 w-auto object-contain opacity-90" />
+          <img src="/blunt.png" alt="Blunt" class="h-16 w-auto object-contain opacity-90" />
+          <img src="/bentara.png" alt="Bentara Campus" class="h-16 w-auto object-contain opacity-90" />
+        </div>
+
+        <div class="flex items-center gap-16" aria-hidden="true">
+          <img src="/luminous.png" alt="" class="h-16 w-auto object-contain opacity-90" />
+          <img src="/navanti.png" alt="" class="h-16 w-auto object-contain opacity-90" />
+          <img src="/no_moss.png" alt="" class="h-16 w-auto object-contain opacity-90" />
+          <img src="/ey.png" alt="" class="h-16 w-auto object-contain opacity-90" />
+          <img src="/blunt.png" alt="" class="h-16 w-auto object-contain opacity-90" />
+          <img src="/bentara.png" alt="" class="h-16 w-auto object-contain opacity-90" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
   </div>
 </template>
 
