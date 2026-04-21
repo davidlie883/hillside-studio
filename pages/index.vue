@@ -195,26 +195,26 @@
 </div>
 
       <section class="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        <div class="rounded-2xl border border-white/10 bg-white/10 p-6 text-white backdrop-blur-sm">
-          <h3 class="text-3xl font-bold">50+</h3>
-          <p class="mt-2 text-white/75">Mock projects explored</p>
-        </div>
+  <div class="rounded-2xl border border-white/10 bg-white/10 p-6 text-white backdrop-blur-sm">
+    <h3 class="text-3xl font-bold">50+</h3>
+    <p class="mt-2 text-white/75">Mock projects explored</p>
+  </div>
 
-        <div class="rounded-2xl border border-white/10 bg-white/10 p-6 text-white backdrop-blur-sm">
-          <h3 class="text-3xl font-bold">20+</h3>
-          <p class="mt-2 text-white/75">Landing page concepts</p>
-        </div>
+  <div class="rounded-2xl border border-white/10 bg-white/10 p-6 text-white backdrop-blur-sm">
+    <h3 class="text-3xl font-bold">20+</h3>
+    <p class="mt-2 text-white/75">Landing page concepts</p>
+  </div>
 
-        <div class="rounded-2xl border border-white/10 bg-white/10 p-6 text-white backdrop-blur-sm">
-          <h3 class="text-3xl font-bold">100%</h3>
-          <p class="mt-2 text-white/75">Responsive-first layouts</p>
-        </div>
+  <div class="rounded-2xl border border-white/10 bg-white/10 p-6 text-white backdrop-blur-sm">
+    <h3 class="text-3xl font-bold">100%</h3>
+    <p class="mt-2 text-white/75">Responsive-first layouts</p>
+  </div>
 
-        <div class="rounded-2xl border border-white/10 bg-white/10 p-6 text-white backdrop-blur-sm">
-          <h3 class="text-3xl font-bold">24/7</h3>
-          <p class="mt-2 text-white/75">Modern business presence</p>
-        </div>
-      </section>
+  <div class="rounded-2xl border border-white/10 bg-white/10 p-6 text-white backdrop-blur-sm">
+    <h3 class="text-3xl font-bold">24/7</h3>
+    <p class="mt-2 text-white/75">Modern business presence</p>
+  </div>
+</section>
     </div>
   </div>
 </section>
