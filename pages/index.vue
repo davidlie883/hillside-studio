@@ -6,7 +6,7 @@
   <div class="mx-auto flex max-w-7xl items-center justify-between border-b border-white/10 pb-4">
     <div class="flex items-center gap-10">
       <img
-  src="/hillside.webp"
+  src="/hillside_white.webp"
   alt="Hillside Studios"
   class="h-10 w-auto object-contain md:h-12"
 />
