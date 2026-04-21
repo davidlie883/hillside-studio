@@ -26,12 +26,7 @@
           Approach
         </NuxtLink>
 
-        <NuxtLink
-  to="/contact"
-  class="rounded-full border border-white/20 bg-white/10 px-5 py-3 text-sm font-medium text-white transition hover:bg-white/15"
->
-  Contact
-</NuxtLink>
+        
       </nav>
     </div>
 
@@ -69,9 +64,8 @@
             ref="textRef"
             class="text-lg leading-relaxed text-white/75"
           >
-            At Hillside, we’re a creative tech agency dedicated to helping businesses grow.
-            We design and develop engaging websites and digital products that elevate brands
-            and deliver real results.
+            At Hillside, we’re a creative tech agency dedicated to helping businesses grow. We design and develop engaging websites and digital products that elevate brands and deliver real results. Beyond design, we provide expert consulting and strategic guidance to ensure every step you take leads to success.
+
           </p>
         </div>
 
@@ -98,17 +92,17 @@
   class="grid gap-6 md:grid-cols-2 lg:pt-40"
 >
   <CaseStudyCard
-    image="/house.png"
-    title="Designing Web and System for Australian Business"
-    description="Translating complex problems for establishing a digital presence across web and enterprise business."
-    link="/services"
-    link-text="View Case Study"
-  />
+  image="/house.png"
+  title="Elevating Web and Automation System for YIPABK"
+  description="Indonesian non-profit advancing inclusive education and support systems for children with special needs and their families."
+  link="/case-study/yipabk"
+  link-text="View Case Study"
+/>
 
   <CaseStudyCard
     image="/house.png"
-    title="Designing Web and System for Australian Business"
-    description="Translating complex problems for establishing a digital presence across web and enterprise business."
+    title="Designing Brand, Web, CMS and Booking form for Luminous OT"
+    description="Shaping a distinctive brand identity in a competitive healthcare space whilst working on Web design, CMS and booking form."
     link="/services"
     link-text="View Case Study"
   />
@@ -241,91 +235,25 @@
     <div class="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-black to-transparent"></div>
 
     <div class="testimonial-track flex w-max gap-6">
-      <!-- set 1 -->
-      <article class="w-[340px] shrink-0 overflow-hidden rounded-[2rem] bg-[#111] text-white shadow-[0_10px_40px_rgba(0,0,0,0.35)]">
-        <div
-          class="h-56 bg-cover bg-center"
-          style="background-image: url('/house.png');"
-        ></div>
-        <div class="p-6">
-          <p class="mb-4 text-base leading-relaxed text-white/80">
-            “The layout felt clean and modern, and it presented our business much more clearly.”
-          </p>
-          <h3 class="font-semibold text-white">Sarah Lim</h3>
-          <p class="text-sm text-white/55">Small Business Owner</p>
-        </div>
-      </article>
+      <template v-for="(testimonial, index) in testimonials" :key="`first-${index}`">
+        <TestimonialCard
+          :image="testimonial.image"
+          :quote="testimonial.quote"
+          :name="testimonial.name"
+          :role="testimonial.role"
+          :large="testimonial.large"
+        />
+      </template>
 
-      <article class="w-[520px] shrink-0 overflow-hidden rounded-[2rem] bg-[#111] text-white shadow-[0_10px_40px_rgba(0,0,0,0.35)]">
-        <div
-          class="h-72 bg-cover bg-center"
-          style="background-image: url('/house.png');"
-        ></div>
-        <div class="p-6">
-          <p class="mb-4 text-xl leading-relaxed text-white/85">
-            “Simple, polished, and easy to navigate. It looked much more professional than before.”
-          </p>
-          <h3 class="font-semibold text-white">Daniel Wong</h3>
-          <p class="text-sm text-white/55">Startup Founder</p>
-        </div>
-      </article>
-
-      <article class="w-[340px] shrink-0 overflow-hidden rounded-[2rem] bg-[#111] text-white shadow-[0_10px_40px_rgba(0,0,0,0.35)]">
-        <div
-          class="h-56 bg-cover bg-center"
-          style="background-image: url('/house.png');"
-        ></div>
-        <div class="p-6">
-          <p class="mb-4 text-base leading-relaxed text-white/80">
-            “The structure was very easy to understand, and the design felt neat on every screen.”
-          </p>
-          <h3 class="font-semibold text-white">Chloe Nguyen</h3>
-          <p class="text-sm text-white/55">Marketing Coordinator</p>
-        </div>
-      </article>
-
-      <!-- set 2 -->
-      <article class="w-[340px] shrink-0 overflow-hidden rounded-[2rem] bg-[#111] text-white shadow-[0_10px_40px_rgba(0,0,0,0.35)]">
-        <div
-          class="h-56 bg-cover bg-center"
-          style="background-image: url('/house.png');"
-        ></div>
-        <div class="p-6">
-          <p class="mb-4 text-base leading-relaxed text-white/80">
-            “The layout felt clean and modern, and it presented our business much more clearly.”
-          </p>
-          <h3 class="font-semibold text-white">Sarah Lim</h3>
-          <p class="text-sm text-white/55">Small Business Owner</p>
-        </div>
-      </article>
-
-      <article class="w-[520px] shrink-0 overflow-hidden rounded-[2rem] bg-[#111] text-white shadow-[0_10px_40px_rgba(0,0,0,0.35)]">
-        <div
-          class="h-72 bg-cover bg-center"
-          style="background-image: url('/house.png');"
-        ></div>
-        <div class="p-6">
-          <p class="mb-4 text-xl leading-relaxed text-white/85">
-            “Simple, polished, and easy to navigate. It looked much more professional than before.”
-          </p>
-          <h3 class="font-semibold text-white">Daniel Wong</h3>
-          <p class="text-sm text-white/55">Startup Founder</p>
-        </div>
-      </article>
-
-      <article class="w-[340px] shrink-0 overflow-hidden rounded-[2rem] bg-[#111] text-white shadow-[0_10px_40px_rgba(0,0,0,0.35)]">
-        <div
-          class="h-56 bg-cover bg-center"
-          style="background-image: url('/house.png');"
-        ></div>
-        <div class="p-6">
-          <p class="mb-4 text-base leading-relaxed text-white/80">
-            “The structure was very easy to understand, and the design felt neat on every screen.”
-          </p>
-          <h3 class="font-semibold text-white">Chloe Nguyen</h3>
-          <p class="text-sm text-white/55">Marketing Coordinator</p>
-        </div>
-      </article>
+      <template v-for="(testimonial, index) in testimonials" :key="`second-${index}`">
+        <TestimonialCard
+          :image="testimonial.image"
+          :quote="testimonial.quote"
+          :name="testimonial.name"
+          :role="testimonial.role"
+          :large="testimonial.large"
+        />
+      </template>
     </div>
   </div>
 </section>
@@ -453,6 +381,30 @@ const scrollToNext = () => {
     nextSection.scrollIntoView({ behavior: 'smooth' })
   }
 }
+
+const testimonials = [
+  {
+    image: '/house.png',
+    quote: 'The layout felt clean and modern, and it presented our business much more clearly.',
+    name: 'Sarah Lim',
+    role: 'Small Business Owner',
+    large: false
+  },
+  {
+    image: '/house.png',
+    quote: 'Simple, polished, and easy to navigate. It looked much more professional than before.',
+    name: 'Daniel Wong',
+    role: 'Startup Founder',
+    large: true
+  },
+  {
+    image: '/house.png',
+    quote: 'The structure was very easy to understand, and the design felt neat on every screen.',
+    name: 'Chloe Nguyen',
+    role: 'Marketing Coordinator',
+    large: false
+  }
+]
 
 onMounted(() => {
   const tl = gsap.timeline()
