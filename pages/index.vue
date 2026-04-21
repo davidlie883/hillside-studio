@@ -5,9 +5,11 @@
 <header class="px-6 pt-5">
   <div class="mx-auto flex max-w-7xl items-center justify-between border-b border-white/10 pb-4">
     <div class="flex items-center gap-10">
-      <h1 class="text-2xl font-semibold tracking-tight text-white md:text-3xl">
-        Hillside Studios
-      </h1>
+      <img
+  src="/hillside.webp"
+  alt="Hillside Studios"
+  class="h-10 w-auto object-contain md:h-12"
+/>
 
       <nav class="hidden items-center md:flex">
         <NuxtLink
@@ -91,57 +93,27 @@
         </div>
       </div>
 
-      
-
-      <!-- Right side -->
       <div
-        ref="cardRef"
-        class="grid gap-6 md:grid-cols-2 lg:pt-40"
-      >
-        <div class="rounded-[1.75rem] border border-white/25 bg-white/5 p-4">
-          <div
-            class="mb-5 h-56 rounded-2xl bg-cover bg-center"
-            style="background-image: url('/house.png');"
-          ></div>
+  ref="cardRef"
+  class="grid gap-6 md:grid-cols-2 lg:pt-40"
+>
+  <CaseStudyCard
+    image="/house.png"
+    title="Designing Web and System for Australian Business"
+    description="Translating complex problems for establishing a digital presence across web and enterprise business."
+    link="/services"
+    link-text="View Case Study"
+  />
 
-          <h3 class="text-2xl font-medium leading-tight text-white">
-            Designing Web and System for Australian Business
-          </h3>
-
-          <p class="mt-4 text-sm leading-relaxed text-white/65">
-            Translating complex problems for establishing a digital presence across web
-            and enterprise business.
-          </p>
-
-          <div class="mt-10 border-t border-white/20 pt-5">
-            <NuxtLink to="/services" class="text-xl text-white transition hover:text-white/75">
-              → View Case Study
-            </NuxtLink>
-          </div>
-        </div>
-
-        <div class="rounded-[1.75rem] border border-white/25 bg-white/5 p-4">
-          <div
-            class="mb-5 h-56 rounded-2xl bg-cover bg-center"
-            style="background-image: url('/house.png');"
-          ></div>
-
-          <h3 class="text-2xl font-medium leading-tight text-white">
-            Designing Web and System for Australian Business
-          </h3>
-
-          <p class="mt-4 text-sm leading-relaxed text-white/65">
-            Translating complex problems for establishing a digital presence across web
-            and enterprise business.
-          </p>
-
-          <div class="mt-10 border-t border-white/20 pt-5">
-            <NuxtLink to="/services" class="text-xl text-white transition hover:text-white/75">
-              → View Case Study
-            </NuxtLink>
-          </div>
-        </div>
-      </div>
+  <CaseStudyCard
+    image="/house.png"
+    title="Designing Web and System for Australian Business"
+    description="Translating complex problems for establishing a digital presence across web and enterprise business."
+    link="/services"
+    link-text="View Case Study"
+  />
+</div>
+        
     </div>
   </section>
 
@@ -428,21 +400,31 @@
 
       <div class="logo-marquee flex w-max items-center gap-16">
         <div class="flex items-center gap-16">
-          <img src="/luminous.png" alt="Luminous" class="h-16 w-auto object-contain opacity-90" />
-          <img src="/navanti.png" alt="Navanti" class="h-16 w-auto object-contain opacity-90" />
-          <img src="/no_moss.png" alt="No Moss" class="h-16 w-auto object-contain opacity-90" />
-          <img src="/ey.png" alt="EY" class="h-16 w-auto object-contain opacity-90" />
-          <img src="/blunt.png" alt="Blunt" class="h-16 w-auto object-contain opacity-90" />
-          <img src="/bentara.png" alt="Bentara Campus" class="h-16 w-auto object-contain opacity-90" />
+          <img src="/bentara_campus.webp" alt="Bentara Campus" class="h-16 w-auto object-contain opacity-90" />
+          <img src="/creative_gourmet.webp" alt="Creative Gourmet" class="h-16 w-auto object-contain opacity-90" />
+          <img src="/ey.webp" alt="EY" class="h-16 w-auto object-contain opacity-90" />
+          <img src="/farmers_hub.webp" alt="Farmers Hub" class="h-16 w-auto object-contain opacity-90" />
+          <img src="/fenix.webp" alt="Fenix" class="h-16 w-auto object-contain opacity-90" />
+          <img src="/kincrome.webp" alt="Kincrome" class="h-16 w-auto object-contain opacity-90" />
+          <img src="/lactalis.webp" alt="Lactalis" class="h-16 w-auto object-contain opacity-90" />
+          <img src="/luminous.webp" alt="Luminous" class="h-16 w-auto object-contain opacity-90" />
+          <img src="/navanti.webp" alt="Navanti" class="h-16 w-auto object-contain opacity-90" />
+          <img src="/no_moss.webp" alt="No Moss" class="h-16 w-auto object-contain opacity-90" />
+          <img src="/planet_innovation.webp" alt="Planet Innovation" class="h-16 w-auto object-contain opacity-90" />
         </div>
 
         <div class="flex items-center gap-16" aria-hidden="true">
-          <img src="/luminous.png" alt="" class="h-16 w-auto object-contain opacity-90" />
-          <img src="/navanti.png" alt="" class="h-16 w-auto object-contain opacity-90" />
-          <img src="/no_moss.png" alt="" class="h-16 w-auto object-contain opacity-90" />
-          <img src="/ey.png" alt="" class="h-16 w-auto object-contain opacity-90" />
-          <img src="/blunt.png" alt="" class="h-16 w-auto object-contain opacity-90" />
-          <img src="/bentara.png" alt="" class="h-16 w-auto object-contain opacity-90" />
+          <img src="/bentara_campus.webp" alt="" class="h-16 w-auto object-contain opacity-90" />
+          <img src="/creative_gourmet.webp" alt="" class="h-16 w-auto object-contain opacity-90" />
+          <img src="/ey.webp" alt="" class="h-16 w-auto object-contain opacity-90" />
+          <img src="/farmers_hub.webp" alt="" class="h-16 w-auto object-contain opacity-90" />
+          <img src="/fenix.webp" alt="" class="h-16 w-auto object-contain opacity-90" />
+          <img src="/kincrome.webp" alt="" class="h-16 w-auto object-contain opacity-90" />
+          <img src="/lactalis.webp" alt="" class="h-16 w-auto object-contain opacity-90" />
+          <img src="/luminous.webp" alt="" class="h-16 w-auto object-contain opacity-90" />
+          <img src="/navanti.webp" alt="" class="h-16 w-auto object-contain opacity-90" />
+          <img src="/no_moss.webp" alt="" class="h-16 w-auto object-contain opacity-90" />
+          <img src="/planet_innovation.webp" alt="" class="h-16 w-auto object-contain opacity-90" />
         </div>
       </div>
     </div>
