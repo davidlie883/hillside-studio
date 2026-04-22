@@ -49,7 +49,7 @@
           ref="tagRef"
           class="mb-4 text-sm uppercase tracking-[0.2em] text-white/60"
         >
-          Creative + Tech
+          Creative + Marketing + Tech
         </p>
 
         <h2
@@ -70,13 +70,7 @@
         </div>
 
         <div class="mt-8 flex flex-wrap gap-4">
-          <NuxtLink
-            ref="buttonRef"
-            to="/contact"
-            class="rounded-xl bg-white px-6 py-4 text-base font-medium text-black transition hover:opacity-90"
-          >
-            → Let’s Work Together
-          </NuxtLink>
+  
 
           <NuxtLink
             to="/services"

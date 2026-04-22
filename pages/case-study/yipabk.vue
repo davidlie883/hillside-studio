@@ -70,7 +70,7 @@
           ref="textRef"
           class="mt-6 max-w-3xl text-lg leading-relaxed text-black/70 md:text-xl"
         >
-          an Indonesian non-profit advancing inclusive education and support systems
+          An Indonesian non-profit advancing inclusive education and support systems
           for children with special needs and their families.
         </p>
       </div>
@@ -94,7 +94,7 @@
   <div class="grid gap-10 border-t border-black/10 pt-10 md:grid-cols-[0.8fr_1.6fr] md:gap-16">
     <div>
       <p class="text-3xl font-medium tracking-tight text-black md:text-5xl">
-        About
+        Overview
       </p>
     </div>
 
@@ -145,6 +145,160 @@
   </div>
 </section>
 
+<section
+  ref="designSectionRef"
+  class="mx-auto w-full px-6 pb-24 pt-8 opacity-0 translate-y-8 md:px-10 md:pb-32 lg:px-16"
+>
+  <div class="mb-10">
+    <p class="mb-3 text-sm uppercase tracking-[0.2em] text-black/40">Process</p>
+    <h2 class="max-w-5xl text-4xl font-medium leading-[0.95] tracking-tight text-black md:text-6xl">
+      Get to know the YIPABK design and system process.
+    </h2>
+  </div>
+
+  <div class="no-scrollbar flex snap-x snap-mandatory gap-6 overflow-x-auto pb-4">
+    <!-- Card 1 -->
+    <article class="snap-start shrink-0 overflow-hidden rounded-[2rem] bg-black text-white w-[88vw] md:w-[760px] transition duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_20px_50px_rgba(0,0,0,0.18)]">
+      <div class="relative h-[640px]">
+        <img
+          src="/house.png"
+          alt="YIPABK design introduction"
+          class="absolute inset-0 h-full w-full object-cover"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/10"></div>
+
+        <div class="relative flex h-full flex-col justify-between p-8 md:p-10">
+          <div>
+            <p class="mb-3 text-sm uppercase tracking-[0.2em] text-white/60">
+              Design Introduction
+            </p>
+
+            <h3 class="max-w-md text-3xl font-medium leading-tight tracking-tight text-white md:text-5xl">
+              Professional, warm, and accessible by design.
+            </h3>
+          </div>
+
+          <p class="max-w-lg text-base leading-relaxed text-white/80 md:text-lg">
+            YIPABK’s design was shaped to feel credible and clear, while still feeling human
+            and welcoming for families, educators, and stakeholders.
+          </p>
+        </div>
+      </div>
+    </article>
+
+    <!-- Card 2 -->
+    <article class="snap-start shrink-0 rounded-[2rem] bg-black text-white w-[82vw] md:w-[430px] p-8 md:p-10 flex h-[640px] flex-col justify-between transition duration-300 ease-out hover:-translate-y-1 hover:scale-[1.04] hover:shadow-[0_20px_50px_rgba(0,0,0,0.18)]">
+      <div>
+        <p class="mb-3 text-sm uppercase tracking-[0.2em] text-white/50">
+          Consistency
+        </p>
+
+        <h3 class="max-w-sm text-3xl font-medium leading-tight tracking-tight md:text-5xl">
+          One visual language across web and system.
+        </h3>
+      </div>
+
+      <p class="max-w-sm text-base leading-relaxed text-white/75 md:text-lg">
+        Each component was built with consistency in mind, ensuring that both the public-facing
+        website and the internal system shared a coherent visual language.
+      </p>
+    </article>
+
+    <!-- Card 3 -->
+    <article class="snap-start shrink-0 rounded-[2rem] border border-black/10 bg-white text-black w-[82vw] md:w-[430px] p-8 md:p-10 flex h-[640px] flex-col justify-between shadow-[0_10px_40px_rgba(0,0,0,0.05)] transition duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_20px_50px_rgba(0,0,0,0.12)]">
+      <div>
+        <p class="mb-3 text-sm uppercase tracking-[0.2em] text-black/40">
+          Clarity
+        </p>
+
+        <h3 class="max-w-sm text-3xl font-medium leading-tight tracking-tight md:text-5xl">
+          Not just visual, but functional.
+        </h3>
+      </div>
+
+      <p class="max-w-sm text-base leading-relaxed text-black/70 md:text-lg">
+        The goal was not just to make something visually appealing, but to make the web and
+        system experience clearer, easier to use, and more supportive for both internal and
+        external stakeholders.
+      </p>
+    </article>
+
+    <!-- Card 4 -->
+    <article class="snap-start shrink-0 overflow-hidden rounded-[2rem] bg-[#111] text-white w-[88vw] md:w-[760px] transition duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_20px_50px_rgba(0,0,0,0.18)]">
+      <div class="flex h-[640px] flex-col justify-between p-8 md:p-10">
+        <div>
+          <p class="mb-3 text-sm uppercase tracking-[0.2em] text-white/50">
+            Internal + External
+          </p>
+
+          <h3 class="max-w-2xl text-3xl font-medium leading-tight tracking-tight md:text-5xl">
+            A digital system built for real use, not just presentation.
+          </h3>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-2">
+          <div class="rounded-[1.5rem] border border-white/10 bg-white/5 p-6">
+            <p class="mb-2 text-sm uppercase tracking-[0.2em] text-white/40">
+              Public-facing website
+            </p>
+            <p class="text-white/80">
+              Built to strengthen trust, improve readability, and present YIPABK’s mission
+              in a more structured and engaging way.
+            </p>
+          </div>
+
+          <div class="rounded-[1.5rem] border border-white/10 bg-white/5 p-6">
+            <p class="mb-2 text-sm uppercase tracking-[0.2em] text-white/40">
+              Internal automation system
+            </p>
+            <p class="text-white/80">
+              Designed to support operational workflows like finance, data management,
+              and time-sheeting with a cleaner and more manageable structure.
+            </p>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section
+  ref="buildSectionRef"
+  class="mx-auto max-w-7xl px-6 pb-24 opacity-0 translate-y-8 md:px-10 md:pb-32 lg:px-16"
+>
+  <div class="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+    <div>
+      <p class="mb-3 text-sm uppercase tracking-[0.2em] text-black/40">Development</p>
+      <h2 class="text-3xl font-medium leading-tight tracking-tight text-black md:text-5xl">
+        From back end structure to front end experience.
+      </h2>
+    </div>
+
+    <div class="space-y-8">
+      <div class="rounded-[2rem] border border-black/10 bg-white p-8 shadow-[0_10px_40px_rgba(0,0,0,0.04)]">
+        <p class="mb-6 text-lg leading-relaxed text-black/75 md:text-xl">
+          Following our post web uplift, YIPABK’s website has gained traction with more monthly donators, people contacting and reaching out as well as higher conversion rates of donors.
+        </p>
+
+      </div>
+
+      <div class="overflow-hidden rounded-[2rem] border border-black/10 bg-[#f7f7f5]">
+        <img
+          src="/house.png"
+          alt="YIPABK development process"
+          class="h-[300px] w-full object-cover md:h-[420px]"
+        />
+      </div>
+
+      <p class="text-sm uppercase tracking-[0.2em] text-black/40">
+        Showcase some process images from back end to front end
+      </p>
+    </div>
+  </div>
+</section>
+
+
+
 
 </template>
 
@@ -162,6 +316,9 @@ const titleRef = ref(null)
 const textRef = ref(null)
 const aboutSectionRef = ref(null)
 const previewSectionRef = ref(null)
+const designSectionRef = ref(null)
+const buildSectionRef = ref(null)
+const resultsSectionRef = ref(null)
 
 onMounted(() => {
   const tl = gsap.timeline()
@@ -227,5 +384,59 @@ onMounted(() => {
       }
     )
   }
+
+  if (designSectionRef.value) {
+  gsap.fromTo(
+    designSectionRef.value,
+    { opacity: 0, y: 40 },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: designSectionRef.value,
+        start: 'top 88%',
+        toggleActions: 'play none none none'
+      }
+    }
+  )
+}
+
+if (buildSectionRef.value) {
+  gsap.fromTo(
+    buildSectionRef.value,
+    { opacity: 0, y: 40 },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: buildSectionRef.value,
+        start: 'top 88%',
+        toggleActions: 'play none none none'
+      }
+    }
+  )
+}
+
+if (resultsSectionRef.value) {
+  gsap.fromTo(
+    resultsSectionRef.value,
+    { opacity: 0, y: 40 },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: resultsSectionRef.value,
+        start: 'top 88%',
+        toggleActions: 'play none none none'
+      }
+    }
+  )
+}
 })
 </script>
