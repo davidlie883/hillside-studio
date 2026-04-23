@@ -219,36 +219,71 @@
 
         <!-- Testimonials -->
         <section class="mb-24 overflow-hidden">
-  <div class="mb-8">
-    <p class="mb-3 text-sm uppercase tracking-[0.2em] text-gray-500">Testimonials</p>
-    <h2 class="text-3xl font-bold md:text-4xl">What clients say</h2>
+  <div class="mb-8 flex items-end justify-between gap-6">
+    <div>
+      <p class="mb-3 text-sm uppercase tracking-[0.2em] text-gray-500">Testimonials</p>
+      <h2 class="text-3xl font-bold md:text-4xl">What clients say</h2>
+    </div>
+
+    <div class="hidden items-center gap-3 md:flex">
+      <button
+        type="button"
+        @click="prevTestimonial"
+        class="flex h-12 w-12 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-white/20 disabled:cursor-not-allowed disabled:opacity-40"
+        :disabled="currentTestimonialIndex === 0"
+      >
+        ←
+      </button>
+
+      <button
+        type="button"
+        @click="nextTestimonial"
+        class="flex h-12 w-12 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-white/20 disabled:cursor-not-allowed disabled:opacity-40"
+        :disabled="currentTestimonialIndex >= maxTestimonialIndex"
+      >
+        →
+      </button>
+    </div>
   </div>
 
-  <div class="relative">
-    <div class="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-black to-transparent"></div>
-    <div class="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-black to-transparent"></div>
+  <div class="relative overflow-hidden">
+    <div class="pointer-events-none absolute inset-y-0 left-0 z-10 w-10 bg-gradient-to-r from-black to-transparent"></div>
+    <div class="pointer-events-none absolute inset-y-0 right-0 z-10 w-10 bg-gradient-to-l from-black to-transparent"></div>
 
-    <div class="testimonial-track flex w-max gap-6">
-      <template v-for="(testimonial, index) in testimonials" :key="`first-${index}`">
-        <TestimonialCard
-          :image="testimonial.image"
-          :quote="testimonial.quote"
-          :name="testimonial.name"
-          :role="testimonial.role"
-          :large="testimonial.large"
-        />
-      </template>
-
-      <template v-for="(testimonial, index) in testimonials" :key="`second-${index}`">
-        <TestimonialCard
-          :image="testimonial.image"
-          :quote="testimonial.quote"
-          :name="testimonial.name"
-          :role="testimonial.role"
-          :large="testimonial.large"
-        />
-      </template>
+    <div
+      class="flex gap-6 transition-transform duration-500 ease-out"
+      :style="{ transform: `translateX(-${currentTestimonialIndex * 366}px)` }"
+    >
+      <TestimonialCard
+        v-for="(testimonial, index) in testimonials"
+        :key="index"
+        :image="testimonial.image"
+        :quote="testimonial.quote"
+        :name="testimonial.name"
+        :role="testimonial.role"
+        :large="testimonial.large"
+      />
     </div>
+  </div>
+
+  <div class="mt-6 flex items-center justify-center gap-3 md:hidden">
+    <button
+      type="button"
+      @click="prevTestimonial"
+      class="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-white/20 disabled:cursor-not-allowed disabled:opacity-40"
+      :disabled="currentTestimonialIndex === 0"
+    >
+      ←
+    </button>
+
+    <button
+      type="button"
+      @click="nextTestimonial"
+      class="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-white/20 disabled:cursor-not-allowed disabled:opacity-40"
+      :disabled="currentTestimonialIndex >= maxTestimonialIndex"
+    >
+      →
+    </button>
   </div>
 </section>
 
@@ -356,9 +391,10 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, computed } from 'vue'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -381,24 +417,69 @@ const testimonials = [
     image: '/house.png',
     quote: 'The layout felt clean and modern, and it presented our business much more clearly.',
     name: 'Sarah Lim',
-    role: 'Small Business Owner',
-    large: false
+    role: 'Small Business Owner'
   },
   {
     image: '/house.png',
     quote: 'Simple, polished, and easy to navigate. It looked much more professional than before.',
     name: 'Daniel Wong',
-    role: 'Startup Founder',
-    large: true
+    role: 'Startup Founder'
   },
   {
     image: '/house.png',
     quote: 'The structure was very easy to understand, and the design felt neat on every screen.',
     name: 'Chloe Nguyen',
-    role: 'Marketing Coordinator',
-    large: false
+    role: 'Marketing Coordinator'
+  },
+  {
+    image: '/house.png',
+    quote: 'The website feels much clearer now, and it is easier for visitors to understand what we do.',
+    name: 'Jason Tan',
+    role: 'Operations Lead'
+  },
+  {
+    image: '/house.png',
+    quote: 'The updated design made the business look more trustworthy and much more organised.',
+    name: 'Melissa Hart',
+    role: 'Project Manager'
+  },
+  {
+    image: '/house.png',
+    quote: 'It feels more premium, more intentional, and much easier to navigate than the previous version.',
+    name: 'Andrew Lee',
+    role: 'Business Director'
+  },
+  {
+    image: '/house.png',
+    quote: 'The structure and spacing made everything easier to read and more pleasant to use.',
+    name: 'Natalie Chen',
+    role: 'Communications Officer'
+  },
+  {
+    image: '/house.png',
+    quote: 'It now feels like a proper brand presence instead of just a basic website.',
+    name: 'Kevin Ong',
+    role: 'Founder'
   }
 ]
+
+const currentTestimonialIndex = ref(0)
+
+const maxTestimonialIndex = computed(() => {
+  return Math.max(testimonials.length - 3, 0)
+})
+
+const nextTestimonial = () => {
+  if (currentTestimonialIndex.value < maxTestimonialIndex.value) {
+    currentTestimonialIndex.value++
+  }
+}
+
+const prevTestimonial = () => {
+  if (currentTestimonialIndex.value > 0) {
+    currentTestimonialIndex.value--
+  }
+}
 
 onMounted(() => {
   const tl = gsap.timeline()
