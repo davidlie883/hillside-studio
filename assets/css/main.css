@@ -3,7 +3,7 @@ html {
 }
 
 .logo-marquee {
-  animation: scroll-logos 22s linear infinite;
+  animation: scroll-logos 40s linear infinite;
 }
 
 .logo-marquee:hover {
