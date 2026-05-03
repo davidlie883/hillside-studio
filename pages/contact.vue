@@ -58,7 +58,7 @@
 <div ref="formCardRef" class="rounded-3xl bg-white p-8 shadow-sm">
   <h2 class="mb-8 text-2xl font-semibold">Send a message</h2>
 
-  <form class="space-y-5">
+  <form class="space-y-6">
     <div class="form-field">
       <label
         for="name"
@@ -119,12 +119,15 @@
       ></textarea>
     </div>
 
-    <button
-      type="submit"
-      class="form-field w-full rounded-full bg-black px-6 py-4 text-white transition hover:bg-gray-800"
-    >
-      Send Message
-    </button>
+    <!-- Submit button -->
+    <div class="pt-2">
+      <button
+        type="submit"
+        class="block w-full rounded-full bg-black px-6 py-4 text-center font-medium text-white transition hover:bg-gray-800"
+      >
+        Send Message
+      </button>
+    </div>
   </form>
 </div>
       </div>
