@@ -17,7 +17,7 @@
       </div>
 
       <div class="grid gap-8 md:grid-cols-2">
-        <!-- Contains both the boxes, the grid-->
+        <!-- Contact information box -->
         <div ref="infoCardRef" class="rounded-3xl bg-white p-8 shadow-sm">
           <h2 class="mb-8 text-2xl font-semibold">Get in touch</h2>
 
@@ -53,6 +53,7 @@
           </div>
         </div>
 
+        <!-- Contact form box -->
         <div ref="formCardRef" class="rounded-3xl bg-white p-8 shadow-sm">
           <h2 class="mb-8 text-2xl font-semibold">Send a message</h2>
 
@@ -61,8 +62,9 @@
               <label
                 for="name"
                 class="mb-2 block text-sm font-medium text-gray-700"
-                >Full Name</label
               >
+                Full Name
+              </label>
               <input
                 id="name"
                 type="text"
@@ -75,8 +77,9 @@
               <label
                 for="email"
                 class="mb-2 block text-sm font-medium text-gray-700"
-                >Email</label
               >
+                Email
+              </label>
               <input
                 id="email"
                 type="email"
@@ -89,8 +92,9 @@
               <label
                 for="subject"
                 class="mb-2 block text-sm font-medium text-gray-700"
-                >Subject</label
               >
+                Subject
+              </label>
               <input
                 id="subject"
                 type="text"
@@ -103,8 +107,9 @@
               <label
                 for="message"
                 class="mb-2 block text-sm font-medium text-gray-700"
-                >Message</label
               >
+                Message
+              </label>
               <textarea
                 id="message"
                 rows="6"
@@ -120,14 +125,27 @@
               Send Message
             </button>
           </form>
-
-          <NuxtLink
-            to="/"
-            class="back-link mt-6 inline-block text-sm text-gray-500 transition hover:text-black"
-          >
-            ← Back Home
-          </NuxtLink>
         </div>
+      </div>
+
+      <!-- Bottom buttons -->
+      <div
+        ref="bottomButtonsRef"
+        class="mt-10 flex flex-wrap items-center gap-4"
+      >
+        <NuxtLink
+          to="/"
+          class="rounded-full border border-gray-300 px-6 py-3 text-gray-700 transition hover:border-black hover:bg-black hover:text-white"
+        >
+          Back Home
+        </NuxtLink>
+
+        <NuxtLink
+          to="/services"
+          class="rounded-full bg-black px-6 py-3 text-white transition hover:bg-gray-800"
+        >
+          View Services
+        </NuxtLink>
       </div>
     </div>
   </div>
@@ -140,6 +158,7 @@ import { gsap } from 'gsap'
 const heroRef = ref(null)
 const infoCardRef = ref(null)
 const formCardRef = ref(null)
+const bottomButtonsRef = ref(null)
 
 onMounted(() => {
   const tl = gsap.timeline()
@@ -176,10 +195,10 @@ onMounted(() => {
       stagger: 0.1,
       ease: 'power2.out'
     }, '-=0.5')
-    .from('.back-link', {
-      y: 10,
+    .from(bottomButtonsRef.value, {
+      y: 20,
       opacity: 0,
-      duration: 0.4,
+      duration: 0.5,
       ease: 'power2.out'
     }, '-=0.2')
 })
