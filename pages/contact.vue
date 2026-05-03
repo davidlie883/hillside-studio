@@ -3,7 +3,7 @@
     class="min-h-screen bg-gray-50 px-6 py-16 text-gray-900 md:px-12 lg:px-20"
   >
     <div class="mx-auto max-w-6xl">
-      <div class="mb-14 max-w-3xl">
+      <div ref="heroRef" class="mb-14 max-w-3xl">
         <p class="mb-3 text-sm uppercase tracking-[0.2em] text-gray-500">
           Contact
         </p>
@@ -18,25 +18,25 @@
 
       <div class="grid gap-8 md:grid-cols-2">
         <!-- Contains both the boxes, the grid-->
-        <div class="rounded-3xl bg-white p-8 shadow-sm">
+        <div ref="infoCardRef" class="rounded-3xl bg-white p-8 shadow-sm">
           <h2 class="mb-8 text-2xl font-semibold">Get in touch</h2>
 
           <div class="space-y-6">
-            <div>
+            <div class="contact-detail">
               <p class="mb-1 text-sm uppercase tracking-wide text-gray-500">
                 Email
               </p>
               <p class="text-lg font-medium">hello@hillsidestudio.com</p>
             </div>
 
-            <div>
+            <div class="contact-detail">
               <p class="mb-1 text-sm uppercase tracking-wide text-gray-500">
                 Phone
               </p>
               <p class="text-lg font-medium">+61 400 123 456</p>
             </div>
 
-            <div>
+            <div class="contact-detail">
               <p class="mb-1 text-sm uppercase tracking-wide text-gray-500">
                 Location
               </p>
@@ -44,7 +44,7 @@
             </div>
           </div>
 
-          <div class="mt-8 rounded-2xl bg-gray-100 p-5">
+          <div class="contact-detail mt-8 rounded-2xl bg-gray-100 p-5">
             <h3 class="mb-2 text-lg font-semibold">Why contact us?</h3>
             <p class="leading-relaxed text-gray-600">
               We help with clean website layouts, service pages, landing pages,
@@ -53,11 +53,11 @@
           </div>
         </div>
 
-        <div class="rounded-3xl bg-white p-8 shadow-sm">
+        <div ref="formCardRef" class="rounded-3xl bg-white p-8 shadow-sm">
           <h2 class="mb-8 text-2xl font-semibold">Send a message</h2>
 
           <form class="space-y-6">
-            <div>
+            <div class="form-field">
               <label
                 for="name"
                 class="mb-2 block text-sm font-medium text-gray-700"
@@ -71,7 +71,7 @@
               />
             </div>
 
-            <div>
+            <div class="form-field">
               <label
                 for="email"
                 class="mb-2 block text-sm font-medium text-gray-700"
@@ -85,7 +85,7 @@
               />
             </div>
 
-            <div>
+            <div class="form-field">
               <label
                 for="subject"
                 class="mb-2 block text-sm font-medium text-gray-700"
@@ -99,7 +99,7 @@
               />
             </div>
 
-            <div>
+            <div class="form-field">
               <label
                 for="message"
                 class="mb-2 block text-sm font-medium text-gray-700"
@@ -115,7 +115,7 @@
 
             <button
               type="submit"
-              class="rounded-full bg-black px-6 py-3 text-white"
+              class="form-field rounded-full bg-black px-6 py-3 text-white transition hover:bg-gray-800"
             >
               Send Message
             </button>
@@ -123,7 +123,7 @@
 
           <NuxtLink
             to="/"
-            class="mt-6 inline-block text-sm text-gray-500 hover:text-black"
+            class="back-link mt-6 inline-block text-sm text-gray-500 transition hover:text-black"
           >
             ← Back Home
           </NuxtLink>
@@ -132,3 +132,55 @@
     </div>
   </div>
 </template>
+
+<script setup>
+import { ref, onMounted } from 'vue'
+import { gsap } from 'gsap'
+
+const heroRef = ref(null)
+const infoCardRef = ref(null)
+const formCardRef = ref(null)
+
+onMounted(() => {
+  const tl = gsap.timeline()
+
+  tl.from(heroRef.value, {
+    y: 40,
+    opacity: 0,
+    duration: 0.8,
+    ease: 'power3.out'
+  })
+    .from(infoCardRef.value, {
+      y: 50,
+      opacity: 0,
+      duration: 0.8,
+      ease: 'power3.out'
+    }, '-=0.4')
+    .from(formCardRef.value, {
+      y: 50,
+      opacity: 0,
+      duration: 0.8,
+      ease: 'power3.out'
+    }, '-=0.6')
+    .from('.contact-detail', {
+      y: 20,
+      opacity: 0,
+      duration: 0.5,
+      stagger: 0.12,
+      ease: 'power2.out'
+    }, '-=0.4')
+    .from('.form-field', {
+      y: 20,
+      opacity: 0,
+      duration: 0.5,
+      stagger: 0.1,
+      ease: 'power2.out'
+    }, '-=0.5')
+    .from('.back-link', {
+      y: 10,
+      opacity: 0,
+      duration: 0.4,
+      ease: 'power2.out'
+    }, '-=0.2')
+})
+</script>
