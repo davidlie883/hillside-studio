@@ -54,78 +54,79 @@
         </div>
 
         <!-- Contact form box -->
-        <div ref="formCardRef" class="rounded-3xl bg-white p-8 shadow-sm">
-          <h2 class="mb-8 text-2xl font-semibold">Send a message</h2>
+        <!-- Contact form box -->
+<div ref="formCardRef" class="rounded-3xl bg-white p-8 shadow-sm">
+  <h2 class="mb-8 text-2xl font-semibold">Send a message</h2>
 
-          <form class="space-y-6">
-            <div class="form-field">
-              <label
-                for="name"
-                class="mb-2 block text-sm font-medium text-gray-700"
-              >
-                Full Name
-              </label>
-              <input
-                id="name"
-                type="text"
-                placeholder="Your name"
-                class="w-full rounded-2xl border border-gray-300 px-4 py-3"
-              />
-            </div>
+  <form class="space-y-5">
+    <div class="form-field">
+      <label
+        for="name"
+        class="mb-2 block text-sm font-medium text-gray-700"
+      >
+        Full Name
+      </label>
+      <input
+        id="name"
+        type="text"
+        placeholder="Your name"
+        class="w-full rounded-2xl border border-gray-300 px-4 py-3"
+      />
+    </div>
 
-            <div class="form-field">
-              <label
-                for="email"
-                class="mb-2 block text-sm font-medium text-gray-700"
-              >
-                Email
-              </label>
-              <input
-                id="email"
-                type="email"
-                placeholder="you@example.com"
-                class="w-full rounded-2xl border border-gray-300 px-4 py-3"
-              />
-            </div>
+    <div class="form-field">
+      <label
+        for="email"
+        class="mb-2 block text-sm font-medium text-gray-700"
+      >
+        Email
+      </label>
+      <input
+        id="email"
+        type="email"
+        placeholder="you@example.com"
+        class="w-full rounded-2xl border border-gray-300 px-4 py-3"
+      />
+    </div>
 
-            <div class="form-field">
-              <label
-                for="subject"
-                class="mb-2 block text-sm font-medium text-gray-700"
-              >
-                Subject
-              </label>
-              <input
-                id="subject"
-                type="text"
-                placeholder="How can we help?"
-                class="w-full rounded-2xl border border-gray-300 px-4 py-3"
-              />
-            </div>
+    <div class="form-field">
+      <label
+        for="subject"
+        class="mb-2 block text-sm font-medium text-gray-700"
+      >
+        Subject
+      </label>
+      <input
+        id="subject"
+        type="text"
+        placeholder="How can we help?"
+        class="w-full rounded-2xl border border-gray-300 px-4 py-3"
+      />
+    </div>
 
-            <div class="form-field">
-              <label
-                for="message"
-                class="mb-2 block text-sm font-medium text-gray-700"
-              >
-                Message
-              </label>
-              <textarea
-                id="message"
-                rows="6"
-                placeholder="Tell us a little about your project"
-                class="w-full rounded-2xl border border-gray-300 px-4 py-3"
-              ></textarea>
-            </div>
+    <div class="form-field">
+      <label
+        for="message"
+        class="mb-2 block text-sm font-medium text-gray-700"
+      >
+        Message
+      </label>
+      <textarea
+        id="message"
+        rows="4"
+        placeholder="Tell us a little about your project"
+        class="w-full rounded-2xl border border-gray-300 px-4 py-3"
+      ></textarea>
+    </div>
 
-            <button
-              type="submit"
-              class="form-field rounded-full bg-black px-6 py-3 text-white transition hover:bg-gray-800"
-            >
-              Send Message
-            </button>
-          </form>
-        </div>
+    <button
+      type="submit"
+      class="form-field w-full rounded-full bg-black px-6 py-4 text-white transition hover:bg-gray-800"
+    >
+      Send Message
+    </button>
+  </form>
+</div>
       </div>
 
       <!-- Bottom buttons -->
