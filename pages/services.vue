@@ -5,19 +5,27 @@
       <h1 class="text-xl font-bold text-white md:text-2xl">Hillside Studio</h1>
 
       <nav class="flex gap-3">
-        <NuxtLink
-          to="/services"
-          class="inline-block rounded-full border border-white/40 px-4 py-2 text-sm text-white transition hover:bg-white hover:text-black"
-        >
-          Services
-        </NuxtLink>
-        <NuxtLink
-          to="/contact"
-          class="inline-block rounded-full bg-white px-4 py-2 text-sm text-black transition hover:opacity-90"
-        >
-          Contact
-        </NuxtLink>
-      </nav>
+  <NuxtLink
+    to="/"
+    class="inline-block rounded-full border border-white/40 px-4 py-2 text-sm text-white transition hover:bg-white hover:text-black"
+  >
+    Home
+  </NuxtLink>
+
+  <NuxtLink
+    to="/services"
+    class="inline-block rounded-full border border-white/40 px-4 py-2 text-sm text-white transition hover:bg-white hover:text-black"
+  >
+    Services
+  </NuxtLink>
+
+  <NuxtLink
+    to="/contact"
+    class="inline-block rounded-full bg-white px-4 py-2 text-sm text-black transition hover:opacity-90"
+  >
+    Contact
+  </NuxtLink>
+</nav>
     </header>
 
     <!-- this allows the image to be cropped-->
@@ -28,7 +36,10 @@
       ></div>
       <div class="absolute inset-0 bg-black/45"></div>
 
-      <div class="relative z-10 px-8 pb-20 pt-32 md:px-16 md:pb-24 md:pt-40">
+      <div
+  ref="heroRef"
+  class="relative z-10 px-8 pb-20 pt-32 md:px-16 md:pb-24 md:pt-40"
+>
         <div class="max-w-4xl">
           <p class="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-white/70">
             Our Services
@@ -46,12 +57,12 @@
 
     <main class="px-8 py-16 md:px-16">
       <!-- Main Services -->
-      <section class="mb-20">
+      <section class="animate-section mb-20">
         <p class="mb-3 text-sm uppercase tracking-[0.2em] text-gray-500">What we do</p>
         <h2 class="mb-8 text-3xl font-bold">Core Services</h2>
 
         <div class="grid gap-6 md:grid-cols-3">
-          <div class="rounded-2xl bg-white p-6 shadow-sm">
+          <div class="animate-card rounded-2xl bg-white p-6 shadow-sm">
             <h3 class="mb-3 text-xl font-semibold">Website Design</h3>
             <p class="text-gray-600">
               Clean and modern layouts designed to make information easy to read and navigate.
@@ -75,7 +86,7 @@
       </section>
 
       <!-- Process -->
-      <section class="mb-20">
+      <section class="animate-section mb-20">
         <p class="mb-3 text-sm uppercase tracking-[0.2em] text-gray-500">Our process</p>
         <h2 class="mb-8 text-3xl font-bold">How we work</h2>
 
@@ -116,7 +127,7 @@
       </section>
 
       <!-- Packages -->
-      <section class="mb-20">
+      <section class="animate-section mb-20">
         <p class="mb-3 text-sm uppercase tracking-[0.2em] text-gray-500">Service options</p>
         <h2 class="mb-8 text-3xl font-bold">Simple packages</h2>
 
@@ -131,7 +142,7 @@
             </ul>
           </div>
 
-          <div class="rounded-3xl bg-black p-8 text-white shadow-sm">
+          <div class="animate-card rounded-3xl bg-black p-8 text-white shadow-sm">
             <h3 class="mb-2 text-2xl font-bold">Business</h3>
             <p class="mb-6 text-white/70">A more complete website structure for growing businesses.</p>
             <ul class="space-y-3 text-sm text-white/80">
@@ -154,7 +165,7 @@
       </section>
 
       <!-- Deliverables -->
-      <section class="mb-20 grid gap-8 md:grid-cols-2">
+      <section class="animate-section mb-20 grid gap-8 md:grid-cols-2">
         <div>
           <p class="mb-3 text-sm uppercase tracking-[0.2em] text-gray-500">Included</p>
           <h2 class="mb-5 text-3xl font-bold">What you receive</h2>
@@ -188,7 +199,7 @@
       </section>
 
       <!-- Final CTA -->
-      <section class="rounded-3xl bg-black px-8 py-12 text-white">
+      <section class="animate-section rounded-3xl bg-black px-8 py-12 text-white">
         <p class="mb-3 text-sm uppercase tracking-[0.2em] text-gray-300">Start your project</p>
         <h2 class="mb-4 text-3xl font-bold">Need a website that feels clear and professional?</h2>
         <p class="mb-6 max-w-2xl text-gray-300">
@@ -214,3 +225,50 @@
     </main>
   </div>
 </template>
+
+<script setup>
+import { ref, onMounted } from 'vue'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger)
+
+const heroRef = ref(null)
+
+onMounted(() => {
+  gsap.from(heroRef.value, {
+    y: 50,
+    opacity: 0,
+    duration: 1,
+    ease: 'power3.out'
+  })
+
+  gsap.utils.toArray('.animate-section').forEach((section) => {
+    gsap.from(section, {
+      y: 60,
+      opacity: 0,
+      duration: 0.9,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: section,
+        start: 'top 85%',
+        toggleActions: 'play none none reverse'
+      }
+    })
+  })
+
+  gsap.utils.toArray('.animate-card').forEach((card) => {
+    gsap.from(card, {
+      y: 40,
+      opacity: 0,
+      duration: 0.7,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: card,
+        start: 'top 90%',
+        toggleActions: 'play none none reverse'
+      }
+    })
+  })
+})
+</script>
