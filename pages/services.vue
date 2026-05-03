@@ -1,33 +1,5 @@
 <template>
   <div class="min-h-screen bg-gray-50 text-gray-900">
-    <!-- Navbar -->
-    <header class="absolute left-0 top-0 z-30 flex w-full flex-col gap-4 px-5 py-5 md:flex-row md:items-center md:justify-between md:px-8 md:py-6">
-      <h1 class="text-xl font-bold text-white md:text-2xl">Hillside Studio</h1>
-
-      <nav class="flex gap-3">
-  <NuxtLink
-    to="/"
-    class="inline-block rounded-full border border-white/40 px-4 py-2 text-sm text-white transition hover:bg-white hover:text-black"
-  >
-    Home
-  </NuxtLink>
-
-  <NuxtLink
-    to="/services"
-    class="inline-block rounded-full border border-white/40 px-4 py-2 text-sm text-white transition hover:bg-white hover:text-black"
-  >
-    Services
-  </NuxtLink>
-
-  <NuxtLink
-    to="/contact"
-    class="inline-block rounded-full bg-white px-4 py-2 text-sm text-black transition hover:opacity-90"
-  >
-    Contact
-  </NuxtLink>
-</nav>
-    </header>
-
     <!-- this allows the image to be cropped-->
     <section class="relative overflow-hidden">
       <div
@@ -203,7 +175,7 @@
         <p class="mb-3 text-sm uppercase tracking-[0.2em] text-gray-300">Start your project</p>
         <h2 class="mb-4 text-3xl font-bold">Need a website that feels clear and professional?</h2>
         <p class="mb-6 max-w-2xl text-gray-300">
-          Let’s create a service-based website that is modern, easy to navigate, and visually strong.
+          Let's create a service-based website that is modern, easy to navigate, and visually strong.
         </p>
 
         <div class="flex flex-wrap gap-4">
@@ -227,48 +199,44 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-
-gsap.registerPlugin(ScrollTrigger)
-
 const heroRef = ref(null)
 
 onMounted(() => {
-  gsap.from(heroRef.value, {
-    y: 50,
-    opacity: 0,
-    duration: 1,
-    ease: 'power3.out'
-  })
+    const { $gsap } = useNuxtApp()
 
-  gsap.utils.toArray('.animate-section').forEach((section) => {
-    gsap.from(section, {
-      y: 60,
-      opacity: 0,
-      duration: 0.9,
-      ease: 'power3.out',
-      scrollTrigger: {
-        trigger: section,
-        start: 'top 85%',
-        toggleActions: 'play none none reverse'
-      }
+    $gsap.from(heroRef.value, {
+        y: 50,
+        opacity: 0,
+        duration: 1,
+        ease: 'power3.out'
     })
-  })
 
-  gsap.utils.toArray('.animate-card').forEach((card) => {
-    gsap.from(card, {
-      y: 40,
-      opacity: 0,
-      duration: 0.7,
-      ease: 'power3.out',
-      scrollTrigger: {
-        trigger: card,
-        start: 'top 90%',
-        toggleActions: 'play none none reverse'
-      }
+    $gsap.utils.toArray('.animate-section').forEach((section) => {
+        $gsap.from(section, {
+            y: 60,
+            opacity: 0,
+            duration: 0.9,
+            ease: 'power3.out',
+            scrollTrigger: {
+                trigger: section,
+                start: 'top 85%',
+                toggleActions: 'play none none reverse'
+            }
+        })
     })
-  })
+
+    $gsap.utils.toArray('.animate-card').forEach((card) => {
+        $gsap.from(card, {
+            y: 40,
+            opacity: 0,
+            duration: 0.7,
+            ease: 'power3.out',
+            scrollTrigger: {
+                trigger: card,
+                start: 'top 90%',
+                toggleActions: 'play none none reverse'
+            }
+        })
+    })
 })
 </script>

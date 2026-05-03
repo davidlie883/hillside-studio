@@ -1,4 +1,7 @@
 <template>
-  <NuxtPage />
-<!-- goes to the default first page, usually index -->
+    <UApp>
+        <NuxtLayout>
+            <NuxtPage />
+        </NuxtLayout>
+    </UApp>
 </template>

@@ -1,47 +1,9 @@
-<template> <!-- Main wrapper for the whole page -->
-<div class="min-h-screen bg-black text-white">    <!-- Header -->
-     <!-- Flex is the one who arranges it to make it into a row -->
-<!-- Header -->
-<header class="px-6 pt-5">
-  <div class="mx-auto flex max-w-7xl items-center justify-between border-b border-white/10 pb-4">
-    <div class="flex items-center gap-10">
-      <img
-  src="/hillside_white.webp"
-  alt="Hillside Studios"
-  class="h-10 w-auto object-contain md:h-12"
-/>
-
-      <nav class="hidden items-center md:flex">
-        <NuxtLink
-          to="/"
-          class="px-5 text-base font-medium text-white/70 transition hover:text-white"
-        >
-          Work
-        </NuxtLink>
-
-        <NuxtLink
-          to="/services"
-          class="px-5 text-base font-medium text-white/70 transition hover:text-white"
-        >
-          Approach
-        </NuxtLink>
-
-        
-      </nav>
-    </div>
-
-    <NuxtLink
-      to="/contact"
-      class="rounded-full border border-white/20 bg-white px-5 py-3 text-sm font-medium text-black transition hover:bg-white/90"
-    >
-      Let’s Work Together
-    </NuxtLink>
-  </div>
-</header>
+<template>
+<div class="min-h-screen bg-black text-white">
 
 <!-- Hero -->
 <main class="bg-black">
-    <section class="mx-auto max-w-7xl px-6 pb-16 pt-10 md:px-6 md:pb-24 md:pt-14">
+    <section class="mx-auto max-w-7xl px-6 pb-16 pt-24 md:px-6 md:pb-24 md:pt-28">
     <div class="grid gap-12 lg:grid-cols-[1.05fr_1.25fr] lg:items-start">
       <!-- Left side -->
       <div class="pt-4">
@@ -64,13 +26,13 @@
             ref="textRef"
             class="text-lg leading-relaxed text-white/75"
           >
-            At Hillside, we’re a creative tech agency dedicated to helping businesses grow. We design and develop engaging websites and digital products that elevate brands and deliver real results. Beyond design, we provide expert consulting and strategic guidance to ensure every step you take leads to success.
+            At Hillside, we're a creative tech agency dedicated to helping businesses grow. We design and develop engaging websites and digital products that elevate brands and deliver real results. Beyond design, we provide expert consulting and strategic guidance to ensure every step you take leads to success.
 
           </p>
         </div>
 
         <div class="mt-8 flex flex-wrap gap-4">
-  
+
 
           <NuxtLink
             to="/services"
@@ -101,7 +63,7 @@
     link-text="View Case Study"
   />
 </div>
-        
+
     </div>
   </section>
 
@@ -139,7 +101,7 @@
       </h2>
 
       <p class="mt-8 text-lg leading-relaxed text-white/80 md:text-xl">
-        We’ve built digital experiences for established organisations, startups, and everything
+        We've built digital experiences for established organisations, startups, and everything
         in between. The focus stays the same: systems that scale, solving the communication
         problems that actually matter, and keeping people first throughout the entire process.
       </p>
@@ -153,7 +115,7 @@
 
   <!-- SECTION 2: same image continues, blur increases smoothly -->
     <div id="next-section" class="relative z-10 overflow-hidden">
-  
+
   <!-- soft dark gradient -->
     <div class="absolute inset-0 bg-gradient-to-b from-black/10 via-black/30 to-black/55"></div>
 
@@ -163,7 +125,7 @@
     <!-- extra top fade so blur doesn't feel sudden -->
 <div class="absolute inset-x-0 top-0 h-64 bg-gradient-to-b from-transparent via-black/5 to-black/10"></div>
 
-      <div class="relative mx-auto max-w-7xl px-6 pt-40 pb-16 md:px-10 md:pt-52 md:pb-20 lg:px-16 lg:pt-64 lg:pb-24">      
+      <div class="relative mx-auto max-w-7xl px-6 pt-40 pb-16 md:px-10 md:pt-52 md:pb-20 lg:px-16 lg:pt-64 lg:pb-24">
         <div
   ref="secondTextRef"
   class="mx-auto max-w-3xl text-center opacity-0 translate-y-10"
@@ -318,7 +280,7 @@
 
         <!-- CTA -->
         <section class="rounded-3xl bg-black px-6 py-12 text-white md:px-10">
-          <p class="mb-3 text-sm uppercase tracking-[0.2em] text-gray-300">Let’s build something</p>
+          <p class="mb-3 text-sm uppercase tracking-[0.2em] text-gray-300">Let's build something</p>
           <h2 class="mb-4 text-3xl font-bold md:text-4xl">
             Ready to create a stronger online presence?
           </h2>
@@ -348,7 +310,7 @@
     <section class="overflow-hidden border-t border-white/10 py-12">
   <div class="mx-auto max-w-7xl px-6 md:px-10 lg:px-16">
     <p class="mb-8 text-sm font-medium text-white/80">
-      Our Team’s Previous Experiences:
+      Our Team's Previous Experiences:
     </p>
 
     <div class="relative overflow-hidden">
@@ -391,25 +353,16 @@
 </template>
 
 <script setup>
-import { ref, onMounted, computed } from 'vue'
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-
-
-gsap.registerPlugin(ScrollTrigger)
-
 const tagRef = ref(null)
 const titleRef = ref(null)
 const textRef = ref(null)
-const buttonRef = ref(null)
 const cardRef = ref(null)
 const secondTextRef = ref(null)
 
+const { scrollToSection } = useSmoothScroll()
+
 const scrollToNext = () => {
-  const nextSection = document.getElementById('next-section')
-  if (nextSection) {
-    nextSection.scrollIntoView({ behavior: 'smooth' })
-  }
+    scrollToSection('next-section')
 }
 
 const testimonials = [
@@ -466,57 +419,59 @@ const testimonials = [
 const currentTestimonialIndex = ref(0)
 
 const maxTestimonialIndex = computed(() => {
-  return Math.max(testimonials.length - 3, 0)
+    return Math.max(testimonials.length - 3, 0)
 })
 
 const nextTestimonial = () => {
-  if (currentTestimonialIndex.value < maxTestimonialIndex.value) {
-    currentTestimonialIndex.value++
-  }
+    if (currentTestimonialIndex.value < maxTestimonialIndex.value) {
+        currentTestimonialIndex.value++
+    }
 }
 
 const prevTestimonial = () => {
-  if (currentTestimonialIndex.value > 0) {
-    currentTestimonialIndex.value--
-  }
+    if (currentTestimonialIndex.value > 0) {
+        currentTestimonialIndex.value--
+    }
 }
 
 onMounted(() => {
-  const tl = gsap.timeline()
+    const { $gsap } = useNuxtApp()
 
-  tl.from(tagRef.value, {
-    y: 20,
-    opacity: 0,
-    duration: 0.6
-  })
-    .from(titleRef.value, {
-      y: 40,
-      opacity: 0,
-      duration: 0.8
-    }, '-=0.3')
-    .from(textRef.value, {
-      y: 30,
-      opacity: 0,
-      duration: 0.7
-    }, '-=0.4')
-    .from(cardRef.value, {
-      x: 40,
-      opacity: 0,
-      duration: 0.9
-    }, '-=0.6')
+    const tl = $gsap.timeline()
 
-  if (secondTextRef.value) {
-    gsap.to(secondTextRef.value, {
-      opacity: 1,
-      y: 0,
-      duration: 1,
-      ease: 'power2.out',
-      scrollTrigger: {
-        trigger: secondTextRef.value,
-        start: 'top 85%',
-        toggleActions: 'play none none reverse'
-      }
+    tl.from(tagRef.value, {
+        y: 20,
+        opacity: 0,
+        duration: 0.6
     })
-  }
+        .from(titleRef.value, {
+            y: 40,
+            opacity: 0,
+            duration: 0.8
+        }, '-=0.3')
+        .from(textRef.value, {
+            y: 30,
+            opacity: 0,
+            duration: 0.7
+        }, '-=0.4')
+        .from(cardRef.value, {
+            x: 40,
+            opacity: 0,
+            duration: 0.9
+        }, '-=0.6')
+
+    if (secondTextRef.value) {
+        $gsap.to(secondTextRef.value, {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: 'power2.out',
+            scrollTrigger: {
+                trigger: secondTextRef.value,
+                start: 'top 85%',
+                toggleActions: 'play none none reverse'
+            }
+        })
+    }
 })
 </script>
