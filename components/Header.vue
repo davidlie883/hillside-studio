@@ -1,15 +1,15 @@
 <script setup lang="ts">
-    const isMobileMenuOpen = ref(false)
+const isMobileMenuOpen = ref(false)
 
-    const navItems = [
-        { label: 'Work', to: '/' },
-        { label: 'Approach', to: '/services' },
-        { label: 'Contact', to: '/contact' },
-    ]
+const navItems = [
+    { label: 'Work', to: '/' },
+    { label: 'Approach', to: '/services' },
+    { label: 'Contact', to: '/contact' },
+]
 
-    const closeMobileMenu = () => {
-        isMobileMenuOpen.value = false
-    }
+const closeMobileMenu = () => {
+    isMobileMenuOpen.value = false
+}
 </script>
 
 <template>

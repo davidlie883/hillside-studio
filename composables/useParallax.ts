@@ -126,7 +126,7 @@ export const useParallax = () => {
     }
 
     const killAllTriggers = () => {
-        scrollTriggers.value.forEach(trigger => {
+        scrollTriggers.value.forEach((trigger) => {
             if (trigger.scrollTrigger) trigger.scrollTrigger.kill()
         })
         scrollTriggers.value = []

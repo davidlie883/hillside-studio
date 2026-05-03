@@ -1,7 +1,5 @@
 <template>
-    <footer
-        class="bg-black px-6 py-8 text-white xs:px-8 lg:px-10 xl:px-14 2xl:px-16"
-    >
+    <footer class="bg-black px-6 py-8 text-white xs:px-8 lg:px-10 xl:px-14 2xl:px-16">
         <div class="flex flex-row items-center justify-between gap-4">
             <!-- Left: logo + copyright -->
             <div class="flex flex-col gap-1.5">
@@ -24,10 +22,7 @@
                     hillsideconsultancy@gmail.com
                 </a>
                 <div class="flex items-center gap-2 text-white/60">
-                    <NuxtLink
-                        to="/"
-                        class="text-3xs transition hover:text-white sm:text-xs"
-                    >
+                    <NuxtLink to="/" class="text-3xs transition hover:text-white sm:text-xs">
                         Work
                     </NuxtLink>
                     <span class="text-3xs sm:text-xs">·</span>
@@ -38,10 +33,7 @@
                         Approach
                     </NuxtLink>
                     <span class="text-3xs sm:text-xs">·</span>
-                    <NuxtLink
-                        to="/contact"
-                        class="text-3xs transition hover:text-white sm:text-xs"
-                    >
+                    <NuxtLink to="/contact" class="text-3xs transition hover:text-white sm:text-xs">
                         Contact
                     </NuxtLink>
                 </div>
@@ -50,5 +42,4 @@
     </footer>
 </template>
 
-<script setup>
-</script>
+<script setup></script>
