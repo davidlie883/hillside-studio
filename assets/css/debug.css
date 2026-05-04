@@ -1,0 +1,43 @@
+/* ─────────────────────────────────────────────────────────────
+   DEBUG BORDER VISUALISER
+   Imported via main.css — do not import this file directly.
+
+   Colour legend:
+     red       #ff0000  section
+     orange    #ff6600  header
+     amber     #ff9900  footer
+     yellow    #ffcc00  nav
+     lime      #66ff00  main / article
+     teal      #00ffcc  div
+     cyan      #00ccff  ul / ol
+     blue      #0066ff  li
+     violet    #6600ff  p
+     purple    #cc00ff  h1–h6
+     pink      #ff00cc  a
+     rose      #ff0066  img
+     magenta   #ff3399  button
+     blush     #ff99cc  input / textarea / select
+     grey dash #888888  span
+   ──────────────────────────────────────────────────────────── */
+
+section   { outline: 2px solid #ff0000 !important; }
+header    { outline: 2px solid #ff6600 !important; }
+footer    { outline: 2px solid #ff9900 !important; }
+nav       { outline: 2px solid #ffcc00 !important; }
+main      { outline: 2px solid #66ff00 !important; }
+article   { outline: 2px solid #66ff00 !important; }
+aside     { outline: 2px solid #00ff99 !important; }
+div       { outline: 1px solid #00ffcc !important; }
+ul, ol    { outline: 1px solid #00ccff !important; }
+li        { outline: 1px solid #0066ff !important; }
+p         { outline: 1px solid #6600ff !important; }
+h1, h2,
+h3, h4,
+h5, h6    { outline: 1px solid #cc00ff !important; }
+a         { outline: 1px solid #ff00cc !important; }
+img       { outline: 2px solid #ff0066 !important; }
+button    { outline: 2px solid #ff3399 !important; }
+input,
+textarea,
+select    { outline: 2px solid #ff99cc !important; }
+span      { outline: 1px dashed #888888 !important; }

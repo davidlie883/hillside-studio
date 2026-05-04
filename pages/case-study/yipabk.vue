@@ -1,7 +1,7 @@
 <template>
     <div class="min-h-screen bg-[#f3f3f3] text-black">
         <!-- Case study hero -->
-        <section class="mx-auto max-w-7xl px-6 pt-24 pb-10 md:px-10 md:pt-28 md:pb-14 lg:px-16">
+        <section class="mx-auto max-w-7xl px-6 pt-24 pb-10 md:px-10 md:pt-28 md:pb-14 lg:px-16 xl:px-20 2xl:px-24">
             <div class="mb-8 flex items-start justify-between">
                 <p class="text-sm text-black/70 md:text-base">©2025</p>
             </div>
@@ -16,7 +16,7 @@
 
                 <h1
                     ref="titleRef"
-                    class="text-4xl font-medium leading-tight tracking-tight text-black md:text-6xl"
+                    class="text-4xl font-medium leading-tight tracking-tight text-black md:text-6xl xl:text-7xl"
                 >
                     Elevating Web and Automation System for YIPABK
                 </h1>
@@ -34,14 +34,14 @@
                 <img
                     src="/house.png"
                     alt="YIPABK case study preview"
-                    class="h-[420px] w-full object-cover md:h-[560px]"
+                    class="h-[420px] w-full object-cover md:h-[560px] xl:h-[640px] 2xl:h-[720px]"
                 />
             </div>
         </section>
     </div>
     <section
         ref="aboutSectionRef"
-        class="mx-auto max-w-7xl px-6 pb-20 pt-16 opacity-0 translate-y-8 md:px-10 md:pb-28 md:pt-24 lg:px-16"
+        class="mx-auto max-w-7xl px-6 pb-20 pt-16 opacity-0 translate-y-8 md:px-10 md:pb-28 md:pt-24 lg:px-16 xl:px-20 2xl:px-24"
     >
         <div
             class="grid gap-10 border-t border-black/10 pt-10 md:grid-cols-[0.8fr_1.6fr] md:gap-16"
@@ -88,7 +88,7 @@
 
     <section
         ref="previewSectionRef"
-        class="mx-auto max-w-7xl px-6 pb-20 opacity-0 translate-y-8 md:px-10 md:pb-28 lg:px-16"
+        class="mx-auto max-w-7xl px-6 pb-20 opacity-0 translate-y-8 md:px-10 md:pb-28 lg:px-16 xl:px-20 2xl:px-24"
     >
         <div
             class="overflow-hidden rounded-[2rem] border border-black/10 bg-white shadow-[0_10px_40px_rgba(0,0,0,0.06)]"
@@ -96,19 +96,19 @@
             <img
                 src="/house.png"
                 alt="YIPABK website preview"
-                class="h-[320px] w-full object-cover md:h-[520px]"
+                class="h-[320px] w-full object-cover md:h-[520px] xl:h-[600px]"
             />
         </div>
     </section>
 
     <section
         ref="designSectionRef"
-        class="mx-auto w-full px-6 pb-24 pt-8 opacity-0 translate-y-8 md:px-10 md:pb-32 lg:px-16"
+        class="mx-auto w-full px-6 pb-24 pt-8 opacity-0 translate-y-8 md:px-10 md:pb-32 lg:px-16 xl:px-20 2xl:px-24"
     >
         <div class="mb-10">
             <p class="mb-3 text-sm uppercase tracking-[0.2em] text-black/40">Process</p>
             <h2
-                class="max-w-5xl text-4xl font-medium leading-[0.95] tracking-tight text-black md:text-6xl"
+                class="max-w-5xl text-4xl font-medium leading-[0.95] tracking-tight text-black md:text-6xl xl:text-7xl"
             >
                 Get to know the YIPABK design and system process.
             </h2>
@@ -117,7 +117,7 @@
         <div class="no-scrollbar flex snap-x snap-mandatory gap-6 overflow-x-auto pb-4">
             <!-- Card 1 -->
             <article
-                class="snap-start shrink-0 overflow-hidden rounded-[2rem] bg-black text-white w-[88vw] md:w-[760px] transition duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_20px_50px_rgba(0,0,0,0.18)]"
+                class="snap-start shrink-0 overflow-hidden rounded-[2rem] bg-black text-white w-[88vw] md:w-[760px] xl:w-[860px] 2xl:w-[960px] transition duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_20px_50px_rgba(0,0,0,0.18)]"
             >
                 <div class="relative h-[640px]">
                     <img
@@ -152,7 +152,7 @@
 
             <!-- Card 2 -->
             <article
-                class="snap-start shrink-0 rounded-[2rem] bg-black text-white w-[82vw] md:w-[430px] p-8 md:p-10 flex h-[640px] flex-col justify-between transition duration-300 ease-out hover:-translate-y-1 hover:scale-[1.04] hover:shadow-[0_20px_50px_rgba(0,0,0,0.18)]"
+                class="snap-start shrink-0 rounded-[2rem] bg-black text-white w-[82vw] md:w-[430px] xl:w-[480px] 2xl:w-[520px] p-8 md:p-10 flex h-[640px] xl:h-[700px] flex-col justify-between transition duration-300 ease-out hover:-translate-y-1 hover:scale-[1.04] hover:shadow-[0_20px_50px_rgba(0,0,0,0.18)]"
             >
                 <div>
                     <p class="mb-3 text-sm uppercase tracking-[0.2em] text-white/50">Consistency</p>
@@ -172,7 +172,7 @@
 
             <!-- Card 3 -->
             <article
-                class="snap-start shrink-0 rounded-[2rem] border border-black/10 bg-white text-black w-[82vw] md:w-[430px] p-8 md:p-10 flex h-[640px] flex-col justify-between shadow-[0_10px_40px_rgba(0,0,0,0.05)] transition duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_20px_50px_rgba(0,0,0,0.12)]"
+                class="snap-start shrink-0 rounded-[2rem] border border-black/10 bg-white text-black w-[82vw] md:w-[430px] xl:w-[480px] 2xl:w-[520px] p-8 md:p-10 flex h-[640px] xl:h-[700px] flex-col justify-between shadow-[0_10px_40px_rgba(0,0,0,0.05)] transition duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_20px_50px_rgba(0,0,0,0.12)]"
             >
                 <div>
                     <p class="mb-3 text-sm uppercase tracking-[0.2em] text-black/40">Clarity</p>
@@ -193,7 +193,7 @@
 
             <!-- Card 4 -->
             <article
-                class="snap-start shrink-0 overflow-hidden rounded-[2rem] bg-[#111] text-white w-[88vw] md:w-[760px] transition duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_20px_50px_rgba(0,0,0,0.18)]"
+                class="snap-start shrink-0 overflow-hidden rounded-[2rem] bg-[#111] text-white w-[88vw] md:w-[760px] xl:w-[860px] 2xl:w-[960px] transition duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_20px_50px_rgba(0,0,0,0.18)]"
             >
                 <div class="flex h-[640px] flex-col justify-between p-8 md:p-10">
                     <div>
@@ -237,7 +237,7 @@
 
     <section
         ref="buildSectionRef"
-        class="mx-auto max-w-7xl px-6 pb-24 opacity-0 translate-y-8 md:px-10 md:pb-32 lg:px-16"
+        class="mx-auto max-w-7xl px-6 pb-24 opacity-0 translate-y-8 md:px-10 md:pb-32 lg:px-16 xl:px-20 2xl:px-24"
     >
         <div class="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
             <div>

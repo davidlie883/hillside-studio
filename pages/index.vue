@@ -1,67 +1,76 @@
 <template>
     <div class="min-h-screen bg-black text-white">
-        <!-- Hero -->
+        <!-- Remove this main tags, put the background on the section tags -->
         <main class="bg-black">
+            <!-- Section 1 -->
             <section
-                class="mx-auto flex min-h-screen max-w-7xl flex-col justify-center px-6 pb-16 pt-24 md:px-6 md:pb-24 md:pt-28"
+                class="flex min-h-screen flex-col px-6 pt-24 md:h-screen md:px-10 md:pt-28 lg:px-16 xl:px-20 xl:pt-32 2xl:px-28"
             >
-                <div class="grid gap-12 lg:grid-cols-[1.05fr_1.25fr] lg:items-start">
-                    <!-- Left side -->
-                    <div class="pt-4">
-                        <p
-                            ref="tagRef"
-                            class="mb-4 text-sm uppercase tracking-[0.2em] text-white/60"
-                        >
-                            Creative + Marketing + Tech
-                        </p>
-
-                        <h2
-                            ref="titleRef"
-                            class="max-w-2xl text-5xl font-light leading-[0.95] tracking-tight text-white md:text-7xl"
-                        >
-                            Digital Agency
-                        </h2>
-
-                        <div class="mt-16 max-w-xl border-t border-white/30 pt-6">
-                            <p ref="textRef" class="text-lg leading-relaxed text-white/75">
-                                At Hillside, we're a creative tech agency dedicated to helping
-                                businesses grow. We design and develop engaging websites and digital
-                                products that elevate brands and deliver real results. Beyond
-                                design, we provide expert consulting and strategic guidance to
-                                ensure every step you take leads to success.
-                            </p>
-                        </div>
-
-                        <div class="mt-8 flex flex-wrap gap-4">
-                            <NuxtLink
-                                to="/services"
-                                class="rounded-xl bg-white/10 px-6 py-4 text-base font-medium text-white transition hover:bg-white/20"
+                <!-- Flex-1 centres the grid at the viewport midpoint -->
+                <div class="flex flex-1 items-center">
+                    <div class="grid w-full gap-12 lg:grid-cols-[1fr_1.2fr] lg:items-start">
+                        <!-- Left side -->
+                        <div class="pt-4">
+                            <p
+                                ref="tagRef"
+                                class="mb-4 text-sm uppercase tracking-[0.2em] text-white/60"
                             >
-                                → View Our Works
-                            </NuxtLink>
+                                Creative + Tech + Marketing
+                            </p>
+
+                            <h2
+                                ref="titleRef"
+                                class="text-5xl font-light leading-[0.95] tracking-tight text-white md:text-7xl lg:text-8xl 2xl:text-9xl"
+                            >
+                                Digital Agency
+                            </h2>
+
+                            <div class="mt-12 border-t border-white/30 pt-6 lg:mt-16">
+                                <p ref="textRef" class="text-lg leading-relaxed text-white/75">
+                                    At Hillside, we're a creative tech agency dedicated to helping
+                                    businesses grow. We design and develop engaging websites and
+                                    digital products that elevate brands and deliver real results.
+                                    Beyond design, we provide expert consulting and strategic
+                                    guidance to ensure every step you take leads to success.
+                                </p>
+                            </div>
+
+                            <div class="mt-8 flex flex-wrap gap-4">
+                                <NuxtLink
+                                    to="/services"
+                                    class="rounded-xl bg-white/10 px-6 py-4 text-base font-medium text-white transition hover:bg-white/20"
+                                >
+                                    → View Our Works
+                                </NuxtLink>
+                            </div>
                         </div>
-                    </div>
 
-                    <div ref="cardRef" class="grid gap-6 md:grid-cols-2 lg:pt-40">
-                        <CaseStudyCard
-                            image="/house.png"
-                            title="Elevating Web and Automation System for YIPABK"
-                            description="Indonesian non-profit advancing inclusive education and support systems for children with special needs and their families."
-                            link="/case-study/yipabk"
-                            link-text="View Case Study"
-                        />
+                        <!-- Right cards — offset downward to stagger against headline -->
+                        <div
+                            ref="cardRef"
+                            class="grid gap-6 md:grid-cols-2 lg:pt-24 xl:pt-36 2xl:pt-48"
+                        >
+                            <CaseStudyCard
+                                image="/house.png"
+                                title="Elevating Web and Automation System for YIPABK"
+                                description="Indonesian non-profit advancing inclusive education and support systems for children with special needs and their families."
+                                link="/case-study/yipabk"
+                                link-text="View Case Study"
+                            />
 
-                        <CaseStudyCard
-                            image="/house.png"
-                            title="Designing Brand, Web, CMS and Booking form for Luminous OT"
-                            description="Shaping a distinctive brand identity in a competitive healthcare space whilst working on Web design, CMS and booking form."
-                            link="/services"
-                            link-text="View Case Study"
-                        />
+                            <CaseStudyCard
+                                image="/house.png"
+                                title="Designing Brand, Web, CMS and Booking form for Luminous OT"
+                                description="Shaping a distinctive brand identity in a competitive healthcare space whilst working on Web design, CMS and booking form."
+                                link="/services"
+                                link-text="View Case Study"
+                            />
+                        </div>
                     </div>
                 </div>
 
-                <div class="flex justify-center pb-10 pt-14 md:pb-12 md:pt-16">
+                <!-- Scroll button pinned to the bottom of the viewport -->
+                <div class="flex justify-center pb-8 pt-6 md:pb-10">
                     <button
                         type="button"
                         @click="scrollToNext"
@@ -72,7 +81,7 @@
                     </button>
                 </div>
             </section>
-
+            <!-- Section 2 -->
             <section class="relative overflow-hidden">
                 <!-- ONE shared background image -->
                 <div
@@ -85,7 +94,7 @@
                 <!-- SECTION 1: immediately visible top half + text -->
                 <div class="relative z-10">
                     <div
-                        class="mx-auto grid min-h-[78vh] max-w-7xl items-center px-6 pt-10 md:px-10 md:pt-14 lg:grid-cols-2 lg:px-16"
+                        class="grid min-h-[78vh] items-center px-6 pt-10 md:px-10 md:pt-14 lg:grid-cols-2 lg:px-16 xl:px-20 xl:pt-16 2xl:px-28"
                     >
                         <div></div>
 
@@ -95,7 +104,7 @@
                             </p>
 
                             <h2
-                                class="text-5xl font-semibold leading-[0.95] tracking-tight text-white md:text-7xl"
+                                class="text-5xl font-semibold leading-[0.95] tracking-tight text-white md:text-7xl lg:text-8xl 2xl:text-9xl"
                             >
                                 Building digital experiences that feel clear, modern, and easy to
                                 use.
@@ -130,7 +139,7 @@
                     ></div>
 
                     <div
-                        class="relative mx-auto max-w-7xl px-6 pt-40 pb-16 md:px-10 md:pt-52 md:pb-20 lg:px-16 lg:pt-64 lg:pb-24"
+                        class="relative px-6 pt-40 pb-16 md:px-10 md:pt-52 md:pb-20 lg:px-16 lg:pt-64 lg:pb-24 xl:px-20 xl:pt-72 xl:pb-28 2xl:px-28"
                     >
                         <div
                             ref="secondTextRef"
@@ -187,9 +196,9 @@
                     </div>
                 </div>
             </section>
-
+            <!-- Section 3 -->
             <!-- Rest of page -->
-            <div class="px-5 py-12 md:px-10 md:py-20 lg:px-16 lg:py-24">
+            <div class="px-6 py-12 md:px-10 md:py-20 lg:px-16 lg:py-24 xl:px-20 xl:py-28 2xl:px-28">
                 <!-- Why Choose Us, and is a parent section and the grid-cols-2 allows it to be next to each other-->
                 <section class="mb-20 grid gap-8 md:grid-cols-2 md:items-start"></section>
 
@@ -271,6 +280,7 @@
                     </div>
                 </section>
 
+                <!-- Section 4 -->
                 <!-- FAQ -->
                 <section class="mb-20">
                     <p class="mb-3 text-sm uppercase tracking-[0.2em] text-gray-500">FAQ</p>
@@ -334,9 +344,9 @@
                 </section>
             </div>
         </main>
-
+        <!-- Section 5 -->
         <section class="overflow-hidden border-t border-white/10 py-12">
-            <div class="mx-auto max-w-7xl px-6 md:px-10 lg:px-16">
+            <div class="px-6 md:px-10 lg:px-16 xl:px-20 2xl:px-28">
                 <p class="mb-8 text-sm font-medium text-white/80">
                     Our Team's Previous Experiences:
                 </p>

@@ -1,5 +1,5 @@
 <template>
-    <div class="min-h-screen bg-gray-50 px-6 pt-24 pb-16 text-gray-900 md:px-12 lg:px-20">
+    <div class="min-h-screen bg-gray-50 px-6 pt-24 pb-16 text-gray-900 md:px-12 lg:px-20 xl:px-28 2xl:px-36">
         <div class="mx-auto max-w-6xl">
             <div ref="heroRef" class="mb-14 max-w-3xl">
                 <p class="mb-3 text-sm uppercase tracking-[0.2em] text-gray-500">Contact</p>

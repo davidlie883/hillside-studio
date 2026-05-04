@@ -8,12 +8,12 @@
             ></div>
             <div class="absolute inset-0 bg-black/45"></div>
 
-            <div ref="heroRef" class="relative z-10 px-8 pb-20 pt-32 md:px-16 md:pb-24 md:pt-40">
+            <div ref="heroRef" class="relative z-10 mx-auto max-w-7xl px-8 pb-20 pt-32 md:px-16 md:pb-24 md:pt-40 xl:px-20 xl:pt-44 2xl:px-24 2xl:pt-48">
                 <div class="max-w-4xl">
                     <p class="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-white/70">
                         Our Services
                     </p>
-                    <h1 class="mb-6 text-4xl font-bold leading-tight text-white md:text-6xl">
+                    <h1 class="mb-6 text-4xl font-bold leading-tight text-white md:text-6xl xl:text-7xl">
                         Practical website solutions for modern businesses
                     </h1>
                     <p class="max-w-2xl text-lg text-white/80">
@@ -24,7 +24,7 @@
             </div>
         </section>
 
-        <main class="px-8 py-16 md:px-16">
+        <main class="mx-auto max-w-7xl px-8 py-16 md:px-16 xl:px-20 xl:py-20 2xl:px-24 2xl:py-24">
             <!-- Main Services -->
             <section class="animate-section mb-20">
                 <p class="mb-3 text-sm uppercase tracking-[0.2em] text-gray-500">What we do</p>
