@@ -13,7 +13,7 @@
                 </p>
             </div>
 
-            <!-- Right: email + nav links -->
+            <!-- Right: email + nav links --> 
             <div class="flex flex-col items-end gap-1.5">
                 <a
                     href="mailto:hillsideconsultancy@gmail.com"

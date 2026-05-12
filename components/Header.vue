@@ -4,7 +4,6 @@ const isMobileMenuOpen = ref(false)
 const navItems = [
     { label: 'Work', to: '/' },
     { label: 'Approach', to: '/services' },
-    { label: 'Contact', to: '/contact' },
 ]
 
 const closeMobileMenu = () => {
