@@ -1,14 +1,14 @@
 <template>
     <div class="page-root">
-
+ 
         <!-- ── Hero ── -->
         <section class="hero-section">
             <div class="hero-glow"></div>
-
+ 
             <div class="hero-top">
                 <p class="hero-eyebrow">Creative + Tech + Marketing</p>
             </div>
-
+ 
             <div class="hero-body">
                 <!-- Left -->
                 <div class="hero-headline-wrap">
@@ -16,13 +16,13 @@
                         <span>Digital</span>
                         <span class="hero-headline--muted">Agency</span>
                     </h1>
-
+ 
                     <p ref="textRef" class="hero-sub">
                         At Hillside, we design and develop engaging websites and digital products
                         that elevate brands and deliver real results — backed by expert consulting
                         and strategic guidance.
                     </p>
-
+ 
                     <div class="hero-actions">
                         <NuxtLink to="/services" class="hero-btn hero-btn--primary">
                             View Our Work
@@ -32,7 +32,7 @@
                         </NuxtLink>
                     </div>
                 </div>
-
+ 
                 <!-- Right — cards side by side -->
                 <div ref="cardRef" class="hero-cards">
                     <CaseStudyCard
@@ -52,7 +52,7 @@
                     />
                 </div>
             </div>
-
+ 
             <!-- Scroll indicator -->
             <div class="hero-scroll">
                 <button type="button" class="hero-scroll-btn" @click="scrollToNext">
@@ -61,7 +61,7 @@
                 </button>
             </div>
         </section>
-
+ 
         <!-- ── Full-bleed image + text ── -->
         <section class="fullbleed-section">
             <div
@@ -69,7 +69,7 @@
                 style="background-image: url('/house.png'); background-size: cover; background-position: center 30%"
             ></div>
             <div class="fullbleed-overlay"></div>
-
+ 
             <div class="fullbleed-top">
                 <div class="fullbleed-top-inner">
                     <div></div>
@@ -86,7 +86,7 @@
                     </div>
                 </div>
             </div>
-
+ 
             <div id="next-section" class="fullbleed-bottom">
                 <div class="fullbleed-blur"></div>
                 <div class="fullbleed-bottom-inner">
@@ -102,7 +102,7 @@
                             client can't update content without breaking something, that's a problem.
                         </p>
                     </div>
-
+ 
                     <div class="stats-grid">
                         <div class="stat-card">
                             <p class="stat-number">50+</p>
@@ -124,7 +124,7 @@
                 </div>
             </div>
         </section>
-
+ 
         <!-- ── Testimonials ── -->
         <section class="testimonials-section">
             <div class="testimonials-inner">
@@ -148,7 +148,7 @@
                         >→</button>
                     </div>
                 </div>
-
+ 
                 <div class="testimonials-track-wrap">
                     <div class="testimonials-fade testimonials-fade--left"></div>
                     <div class="testimonials-fade testimonials-fade--right"></div>
@@ -169,7 +169,7 @@
                 </div>
             </div>
         </section>
-
+ 
         <!-- ── CTA ── -->
         <section class="cta-section">
             <div class="cta-inner">
@@ -184,7 +184,7 @@
                 </div>
             </div>
         </section>
-
+ 
         <!-- ── Logo marquee ── -->
         <section class="marquee-section">
             <div class="marquee-inner">
@@ -203,19 +203,19 @@
                 </div>
             </div>
         </section>
-
+ 
     </div>
 </template>
-
+ 
 <script setup>
 const titleRef = ref(null)
 const textRef = ref(null)
 const cardRef = ref(null)
 const secondTextRef = ref(null)
-
+ 
 const { scrollToSection } = useSmoothScroll()
 const scrollToNext = () => scrollToSection('next-section')
-
+ 
 const testimonials = [
     { image: '/house.png', quote: 'The layout felt clean and modern, and it presented our business much more clearly.', name: 'Sarah Lim', role: 'Small Business Owner' },
     { image: '/house.png', quote: 'Simple, polished, and easy to navigate. It looked much more professional than before.', name: 'Daniel Wong', role: 'Startup Founder' },
@@ -226,12 +226,12 @@ const testimonials = [
     { image: '/house.png', quote: 'The structure and spacing made everything easier to read and more pleasant to use.', name: 'Natalie Chen', role: 'Communications Officer' },
     { image: '/house.png', quote: 'It now feels like a proper brand presence instead of just a basic website.', name: 'Kevin Ong', role: 'Founder' },
 ]
-
+ 
 const currentTestimonialIndex = ref(0)
 const maxTestimonialIndex = computed(() => Math.max(testimonials.length - 3, 0))
 const nextTestimonial = () => { if (currentTestimonialIndex.value < maxTestimonialIndex.value) currentTestimonialIndex.value++ }
 const prevTestimonial = () => { if (currentTestimonialIndex.value > 0) currentTestimonialIndex.value-- }
-
+ 
 const logos = [
     { src: '/bentara_campus.webp', alt: 'Bentara Campus' },
     { src: '/creative_gourmet.webp', alt: 'Creative Gourmet' },
@@ -245,14 +245,14 @@ const logos = [
     { src: '/no_moss.webp', alt: 'No Moss' },
     { src: '/planet_innovation.webp', alt: 'Planet Innovation' },
 ]
-
+ 
 onMounted(() => {
     const { $gsap } = useNuxtApp()
-
+ 
     $gsap.from(titleRef.value, { y: 48, opacity: 0, duration: 1, ease: 'power3.out', delay: 0.1 })
     $gsap.from(textRef.value, { y: 30, opacity: 0, duration: 0.8, ease: 'power2.out', delay: 0.35 })
     $gsap.from(cardRef.value, { x: 40, opacity: 0, duration: 1, ease: 'power3.out', delay: 0.5 })
-
+ 
     if (secondTextRef.value) {
         $gsap.to(secondTextRef.value, {
             opacity: 1,
@@ -268,7 +268,7 @@ onMounted(() => {
     }
 })
 </script>
-
+ 
 <style scoped>
 /* ── Root ── */
 .page-root {
@@ -277,7 +277,7 @@ onMounted(() => {
     font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
     -webkit-font-smoothing: antialiased;
 }
-
+ 
 /* ── Hero ── */
 .hero-section {
     position: relative;
@@ -287,7 +287,7 @@ onMounted(() => {
     padding: 0 40px;
     overflow: hidden;
 }
-
+ 
 .hero-glow {
     position: absolute;
     width: 900px;
@@ -298,12 +298,12 @@ onMounted(() => {
     right: -200px;
     pointer-events: none;
 }
-
+ 
 .hero-top {
     padding-top: 140px;
     padding-bottom: 20px;
 }
-
+ 
 .hero-eyebrow {
     font-size: 11px;
     font-weight: 500;
@@ -311,22 +311,26 @@ onMounted(() => {
     text-transform: uppercase;
     color: rgba(255, 255, 255, 0.35);
 }
-
+ 
 .hero-body {
     flex: 1;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 56px;
+    gap: 0;
     align-items: start;
-    max-width: 1280px;
     width: 100%;
     padding-top: 24px;
 }
-
+ 
+.hero-headline-wrap {
+    padding-top: 16px;
+    padding-right: 56px;
+}
+ 
 .hero-headline-wrap {
     padding-top: 16px;
 }
-
+ 
 .hero-headline {
     display: flex;
     flex-direction: column;
@@ -337,11 +341,11 @@ onMounted(() => {
     color: #fff;
     margin-bottom: 40px;
 }
-
+ 
 .hero-headline--muted {
     color: rgba(255, 255, 255, 0.22);
 }
-
+ 
 .hero-sub {
     font-size: clamp(14px, 1.4vw, 17px);
     font-weight: 300;
@@ -352,13 +356,13 @@ onMounted(() => {
     border-left: 1px solid rgba(255, 255, 255, 0.12);
     padding-left: 20px;
 }
-
+ 
 .hero-actions {
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
 }
-
+ 
 .hero-btn {
     display: inline-flex;
     align-items: center;
@@ -370,25 +374,25 @@ onMounted(() => {
     transition: all 0.2s ease;
     letter-spacing: -0.01em;
 }
-
+ 
 .hero-btn--primary {
     background: #fff;
     color: #000;
 }
-
+ 
 .hero-btn--primary:hover { background: rgba(255, 255, 255, 0.88); }
-
+ 
 .hero-btn--ghost {
     background: rgba(255, 255, 255, 0.06);
     color: rgba(255, 255, 255, 0.7);
     border: 1px solid rgba(255, 255, 255, 0.12);
 }
-
+ 
 .hero-btn--ghost:hover {
     background: rgba(255, 255, 255, 0.1);
     color: #fff;
 }
-
+ 
 .hero-cards {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -396,14 +400,15 @@ onMounted(() => {
     align-items: stretch;
     padding-top: 40px;
     align-self: start;
+    margin-right: -40px;
 }
-
+ 
 .hero-scroll {
     display: flex;
     justify-content: center;
     padding: 28px 0 32px;
 }
-
+ 
 .hero-scroll-btn {
     display: flex;
     flex-direction: column;
@@ -415,46 +420,46 @@ onMounted(() => {
     color: rgba(255, 255, 255, 0.25);
     transition: color 0.2s;
 }
-
+ 
 .hero-scroll-btn:hover { color: rgba(255, 255, 255, 0.5); }
-
+ 
 .hero-scroll-line {
     width: 1px;
     height: 36px;
     background: currentColor;
     animation: scrollPulse 2s ease-in-out infinite;
 }
-
+ 
 .hero-scroll-label {
     font-size: 10px;
     letter-spacing: 0.12em;
     text-transform: uppercase;
 }
-
+ 
 @keyframes scrollPulse {
     0%, 100% { opacity: 0.3; transform: scaleY(1); }
     50% { opacity: 1; transform: scaleY(1.3); }
 }
-
+ 
 /* ── Full-bleed ── */
 .fullbleed-section {
     position: relative;
     overflow: hidden;
 }
-
+ 
 .fullbleed-bg {
     position: absolute;
     inset: 0;
 }
-
+ 
 .fullbleed-overlay {
     position: absolute;
     inset: 0;
     background: rgba(0, 0, 0, 0.35);
 }
-
+ 
 .fullbleed-top { position: relative; z-index: 1; }
-
+ 
 .fullbleed-top-inner {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -464,7 +469,7 @@ onMounted(() => {
     max-width: 1280px;
     margin: 0 auto;
 }
-
+ 
 .fullbleed-eyebrow {
     font-size: 11px;
     font-weight: 500;
@@ -473,7 +478,7 @@ onMounted(() => {
     color: rgba(255, 255, 255, 0.45);
     margin-bottom: 20px;
 }
-
+ 
 .fullbleed-headline {
     font-size: clamp(28px, 3.5vw, 48px);
     font-weight: 300;
@@ -482,7 +487,7 @@ onMounted(() => {
     color: #fff;
     margin-bottom: 24px;
 }
-
+ 
 .fullbleed-body {
     font-size: 16px;
     font-weight: 300;
@@ -490,23 +495,23 @@ onMounted(() => {
     line-height: 1.72;
     max-width: 440px;
 }
-
+ 
 .fullbleed-bottom { position: relative; z-index: 1; }
-
+ 
 .fullbleed-blur {
     position: absolute;
     inset: 0;
     backdrop-filter: blur(4px);
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.55));
 }
-
+ 
 .fullbleed-bottom-inner {
     position: relative;
     max-width: 1280px;
     margin: 0 auto;
     padding: 80px 40px 100px;
 }
-
+ 
 .fullbleed-prose {
     max-width: 680px;
     margin: 0 auto 64px;
@@ -514,7 +519,7 @@ onMounted(() => {
     opacity: 0;
     transform: translateY(24px);
 }
-
+ 
 .fullbleed-prose-text {
     font-size: clamp(16px, 1.8vw, 20px);
     font-weight: 300;
@@ -522,13 +527,13 @@ onMounted(() => {
     line-height: 1.72;
     margin-bottom: 28px;
 }
-
+ 
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 14px;
 }
-
+ 
 .stat-card {
     background: rgba(255, 255, 255, 0.07);
     border: 1px solid rgba(255, 255, 255, 0.09);
@@ -537,9 +542,9 @@ onMounted(() => {
     backdrop-filter: blur(8px);
     transition: background 0.3s;
 }
-
+ 
 .stat-card:hover { background: rgba(255, 255, 255, 0.11); }
-
+ 
 .stat-number {
     font-size: 38px;
     font-weight: 300;
@@ -548,14 +553,14 @@ onMounted(() => {
     line-height: 1;
     margin-bottom: 10px;
 }
-
+ 
 .stat-label {
     font-size: 13px;
     color: rgba(255, 255, 255, 0.45);
     font-weight: 300;
     line-height: 1.4;
 }
-
+ 
 /* ── Shared labels ── */
 .section-eyebrow {
     font-size: 11px;
@@ -565,7 +570,7 @@ onMounted(() => {
     color: rgba(255, 255, 255, 0.3);
     margin-bottom: 10px;
 }
-
+ 
 .section-heading {
     font-size: clamp(28px, 3.5vw, 40px);
     font-weight: 300;
@@ -573,28 +578,28 @@ onMounted(() => {
     color: #fff;
     line-height: 1.1;
 }
-
+ 
 /* ── Testimonials ── */
 .testimonials-section {
     padding: 100px 0;
     border-top: 1px solid rgba(255, 255, 255, 0.07);
 }
-
+ 
 .testimonials-inner {
     max-width: 1280px;
     margin: 0 auto;
     padding: 0 40px;
 }
-
+ 
 .testimonials-header {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
     margin-bottom: 40px;
 }
-
+ 
 .testimonials-nav { display: flex; gap: 10px; }
-
+ 
 .t-nav-btn {
     width: 44px;
     height: 44px;
@@ -609,16 +614,16 @@ onMounted(() => {
     align-items: center;
     justify-content: center;
 }
-
+ 
 .t-nav-btn:hover:not(:disabled) {
     background: rgba(255, 255, 255, 0.1);
     color: #fff;
 }
-
+ 
 .t-nav-btn:disabled { opacity: 0.25; cursor: default; }
-
+ 
 .testimonials-track-wrap { position: relative; overflow: hidden; }
-
+ 
 .testimonials-fade {
     position: absolute;
     inset-y: 0;
@@ -626,19 +631,19 @@ onMounted(() => {
     z-index: 2;
     pointer-events: none;
 }
-
+ 
 .testimonials-fade--left  { left: 0;  background: linear-gradient(to right, #000, transparent); }
 .testimonials-fade--right { right: 0; background: linear-gradient(to left, #000, transparent); }
-
+ 
 .testimonials-track {
     display: flex;
     gap: 20px;
     transition: transform 0.5s ease;
 }
-
+ 
 /* ── CTA ── */
 .cta-section { padding: 0 40px 100px; }
-
+ 
 .cta-inner {
     max-width: 1280px;
     margin: 0 auto;
@@ -647,7 +652,7 @@ onMounted(() => {
     border-radius: 28px;
     padding: 64px 56px;
 }
-
+ 
 .cta-eyebrow {
     font-size: 11px;
     font-weight: 500;
@@ -656,7 +661,7 @@ onMounted(() => {
     color: rgba(255, 255, 255, 0.3);
     margin-bottom: 16px;
 }
-
+ 
 .cta-heading {
     font-size: clamp(28px, 3.5vw, 44px);
     font-weight: 300;
@@ -666,7 +671,7 @@ onMounted(() => {
     margin-bottom: 14px;
     line-height: 1.1;
 }
-
+ 
 .cta-body {
     font-size: 15px;
     font-weight: 300;
@@ -675,9 +680,9 @@ onMounted(() => {
     line-height: 1.65;
     margin-bottom: 36px;
 }
-
+ 
 .cta-actions { display: flex; gap: 12px; flex-wrap: wrap; }
-
+ 
 .cta-btn {
     display: inline-flex;
     align-items: center;
@@ -689,30 +694,30 @@ onMounted(() => {
     transition: all 0.2s;
     letter-spacing: -0.01em;
 }
-
+ 
 .cta-btn--primary { background: #fff; color: #000; }
 .cta-btn--primary:hover { background: rgba(255, 255, 255, 0.88); }
-
+ 
 .cta-btn--ghost {
     background: transparent;
     color: rgba(255, 255, 255, 0.7);
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
-
+ 
 .cta-btn--ghost:hover { background: rgba(255, 255, 255, 0.06); color: #fff; }
-
+ 
 /* ── Marquee ── */
 .marquee-section {
     padding: 56px 0;
     border-top: 1px solid rgba(255, 255, 255, 0.07);
 }
-
+ 
 .marquee-inner {
     max-width: 1280px;
     margin: 0 auto;
     padding: 0 40px;
 }
-
+ 
 .marquee-label {
     font-size: 10px;
     font-weight: 500;
@@ -721,9 +726,9 @@ onMounted(() => {
     color: rgba(255, 255, 255, 0.25);
     margin-bottom: 28px;
 }
-
+ 
 .marquee-track-wrap { position: relative; overflow: hidden; }
-
+ 
 .marquee-fade {
     position: absolute;
     inset-y: 0;
@@ -731,23 +736,23 @@ onMounted(() => {
     z-index: 2;
     pointer-events: none;
 }
-
+ 
 .marquee-fade--left  { left: 0;  background: linear-gradient(to right, #000, transparent); }
 .marquee-fade--right { right: 0; background: linear-gradient(to left, #000, transparent); }
-
+ 
 .logo-marquee {
     display: flex;
     width: max-content;
     animation: marquee 40s linear infinite;
 }
-
+ 
 .marquee-set {
     display: flex;
     align-items: center;
     gap: 56px;
     padding-right: 56px;
 }
-
+ 
 .marquee-logo {
     height: 40px;
     width: auto;
@@ -756,14 +761,14 @@ onMounted(() => {
     filter: brightness(0) invert(1);
     transition: opacity 0.2s;
 }
-
+ 
 .marquee-logo:hover { opacity: 1; }
-
+ 
 @keyframes marquee {
     from { transform: translateX(0); }
     to   { transform: translateX(-50%); }
 }
-
+ 
 /* ── Responsive ── */
 @media (max-width: 900px) {
     .hero-section { padding: 0 24px; }
@@ -778,7 +783,7 @@ onMounted(() => {
     .testimonials-inner { padding: 0 24px; }
     .marquee-inner { padding: 0 24px; }
 }
-
+ 
 @media (max-width: 640px) {
     .stats-grid { grid-template-columns: 1fr 1fr; }
     .testimonials-header { flex-direction: column; align-items: flex-start; gap: 20px; }
