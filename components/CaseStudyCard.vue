@@ -1,7 +1,7 @@
 <template>
-    <div class="rounded-[1.75rem] border border-white/25 bg-white/5 p-4">
+    <div class="rounded-[1.75rem] border border-white/25 bg-white/5 p-4 flex flex-col h-full">
         <div
-            class="mb-5 h-56 rounded-2xl bg-cover bg-center"
+            class="mb-5 h-56 rounded-2xl bg-cover bg-center flex-shrink-0"
             :style="{ backgroundImage: `url('${image}')` }"
         ></div>
 
@@ -9,11 +9,11 @@
             {{ title }}
         </h3>
 
-        <p class="mt-4 text-sm leading-relaxed text-white/65">
+        <p class="mt-4 text-sm leading-relaxed text-white/65 flex-1">
             {{ description }}
         </p>
 
-        <div class="mt-10 border-t border-white/20 pt-5">
+        <div class="mt-6 border-t border-white/20 pt-5">
             <NuxtLink :to="link" class="text-xl text-white transition hover:text-white/75">
                 → {{ linkText }}
             </NuxtLink>
