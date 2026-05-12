@@ -47,68 +47,86 @@
                 <div ref="formCardRef" class="rounded-3xl bg-white p-8 shadow-sm">
                     <h2 class="mb-8 text-2xl font-semibold">Send a message</h2>
 
-                    <form class="space-y-6">
+                    <!-- Success message -->
+                    <div
+                        v-if="success"
+                        class="mb-6 rounded-2xl bg-green-50 border border-green-200 px-5 py-4 text-green-700"
+                    >
+                        ✓ Message sent! We'll get back to you soon.
+                    </div>
+
+                    <!-- Error message -->
+                    <div
+                        v-if="error"
+                        class="mb-6 rounded-2xl bg-red-50 border border-red-200 px-5 py-4 text-red-700"
+                    >
+                        Something went wrong. Please try again.
+                    </div>
+
+                    <form class="space-y-6" @submit.prevent="handleSubmit">
                         <div class="form-field">
                             <label for="name" class="mb-2 block text-sm font-medium text-gray-700">
-                                Full Name
+                                Full Name <span class="text-red-500">*</span>
                             </label>
                             <input
                                 id="name"
+                                v-model="form.name"
                                 type="text"
                                 placeholder="Your name"
+                                required
                                 class="w-full rounded-2xl border border-gray-300 px-4 py-3"
                             />
                         </div>
 
                         <div class="form-field">
                             <label for="email" class="mb-2 block text-sm font-medium text-gray-700">
-                                Email
+                                Email <span class="text-red-500">*</span>
                             </label>
                             <input
                                 id="email"
+                                v-model="form.email"
                                 type="email"
                                 placeholder="you@example.com"
+                                required
                                 class="w-full rounded-2xl border border-gray-300 px-4 py-3"
                             />
                         </div>
 
                         <div class="form-field">
-                            <label
-                                for="subject"
-                                class="mb-2 block text-sm font-medium text-gray-700"
-                            >
-                                Subject
+                            <label for="subject" class="mb-2 block text-sm font-medium text-gray-700">
+                                Subject <span class="text-red-500">*</span>
                             </label>
                             <input
                                 id="subject"
+                                v-model="form.subject"
                                 type="text"
                                 placeholder="How can we help?"
+                                required
                                 class="w-full rounded-2xl border border-gray-300 px-4 py-3"
                             />
                         </div>
 
                         <div class="form-field">
-                            <label
-                                for="message"
-                                class="mb-2 block text-sm font-medium text-gray-700"
-                            >
-                                Message
+                            <label for="message" class="mb-2 block text-sm font-medium text-gray-700">
+                                Message <span class="text-red-500">*</span>
                             </label>
                             <textarea
                                 id="message"
+                                v-model="form.message"
                                 rows="4"
                                 placeholder="Tell us a little about your project"
+                                required
                                 class="w-full rounded-2xl border border-gray-300 px-4 py-3"
                             ></textarea>
                         </div>
 
-                        <!-- Submit button -->
                         <div class="pt-2">
                             <button
                                 type="submit"
-                                class="block w-full rounded-full bg-black px-6 py-4 text-center font-medium text-white transition hover:bg-gray-800"
+                                :disabled="loading"
+                                class="block w-full rounded-full bg-black px-6 py-4 text-center font-medium text-white transition hover:bg-gray-800 disabled:opacity-50 disabled:cursor-not-allowed"
                             >
-                                Send Message
+                                {{ loading ? 'Sending...' : 'Send Message' }}
                             </button>
                         </div>
                     </form>
@@ -140,6 +158,41 @@ const heroRef = ref(null)
 const infoCardRef = ref(null)
 const formCardRef = ref(null)
 const bottomButtonsRef = ref(null)
+
+const form = reactive({
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
+})
+
+const loading = ref(false)
+const success = ref(false)
+const error = ref(false)
+
+async function handleSubmit() {
+    if (!form.name.trim() || !form.email.trim() || !form.subject.trim() || !form.message.trim()) return
+
+    loading.value = true
+    success.value = false
+    error.value = false
+
+    try {
+        await $fetch('/api/contact', {
+            method: 'POST',
+            body: form,
+        })
+        success.value = true
+        form.name = ''
+        form.email = ''
+        form.subject = ''
+        form.message = ''
+    } catch (e) {
+        error.value = true
+    } finally {
+        loading.value = false
+    }
+}
 
 onMounted(() => {
     const { $gsap } = useNuxtApp()

@@ -1,26 +1,30 @@
+import { Resend } from 'resend'
+
 export default defineEventHandler(async (event) => {
     const body = await readBody(event)
-    const { name, email, message } = body
+    const { name, email, subject, message } = body
 
     if (!name || !email || !message) {
         throw createError({ statusCode: 400, statusMessage: 'Missing required fields' })
     }
 
-    // TODO: Wire up email sending (e.g. nuxt-resend, nodemailer, Postmark)
-    // Example with nuxt-resend:
-    //   1. Add nuxt-resend to dependencies and 'nuxt-resend' to nuxt.config modules
-    //   2. Set RESEND_API_KEY in your .env
-    //   3. Replace the log below with:
-    //
-    //   const { emails } = useResend()
-    //   await emails.send({
-    //     from: 'noreply@hillsidestudio.com.au',
-    //     to: ['hillsideconsultancy@gmail.com'],
-    //     subject: `New enquiry from ${name}`,
-    //     html: `<p><strong>${name}</strong> (${email})</p><p>${message}</p>`,
-    //   })
+    const resend = new Resend(process.env.RESEND_API_KEY)
 
-    console.log('[contact] New submission:', { name, email, message })
+    const { error } = await resend.emails.send({
+        from: 'onboarding@resend.dev',
+        to: 'hillsideconsultancy@gmail.com',
+        subject: `[Contact] ${subject || 'New enquiry from ' + name}`,
+        html: `
+            <p><strong>Name:</strong> ${name}</p>
+            <p><strong>Email:</strong> ${email}</p>
+            <p><strong>Subject:</strong> ${subject || 'N/A'}</p>
+            <p><strong>Message:</strong> ${message}</p>
+        `,
+    })
+
+    if (error) {
+        throw createError({ statusCode: 500, statusMessage: 'Failed to send email' })
+    }
 
     return { success: true }
 })
