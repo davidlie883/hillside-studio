@@ -40,6 +40,7 @@ watch(
                 setTimeout(() => {
                     const currentSmoother = getSmoother()
                     if (currentSmoother && $ScrollTrigger) {
+                        currentSmoother.scrollTop(0)
                         $ScrollTrigger.refresh()
                     }
                 }, 100)
